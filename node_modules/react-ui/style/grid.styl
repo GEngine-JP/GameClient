@@ -1,0 +1,36 @@
+.react-ui-grid {
+    border: 1px solid #cdcdcd;
+    border-radius: 4px;
+    width: 100%;
+
+    .react-ui-grid-header {
+        border-left: 1px solid #cdcdcd;
+        cursor: pointer;
+        height: 40px;
+        padding-left: 10px;
+        user-select: none;
+
+        &:first-child {
+            border-left-width: 0;
+        }
+    }
+
+    .react-ui-grid-cell {
+        border: 1px solid #cdcdcd;
+        border-width: 1px 0 0 1px;
+        padding-left: 10px;
+        height: 40px;
+
+        &:first-child {
+            border-left-width: 0;
+        }
+    }
+
+    .react-ui-grid-row {
+        &:nth-child(odd) {
+            .react-ui-grid-cell {
+                background-color: #ededed;
+            }
+        }
+    }
+}
