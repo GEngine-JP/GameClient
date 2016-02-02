@@ -16,7 +16,9 @@ var webpack = require('webpack');
 //noinspection JSUnresolvedFunction
 module.exports = {
     entry: [
+        //页面入口文件配置
         './entry.js',
+        // server
         'webpack-dev-server/client?http://0.0.0.0:8080', // WebpackDevServer host and port
         'webpack/hot/only-dev-server'
     ],
@@ -26,7 +28,14 @@ module.exports = {
         filename: 'bundle.js'
     },
     plugins: [
-        new webpack.optimize.CommonsChunkPlugin("common.js")
+        //提公用js到common.js文件中
+        new webpack.optimize.CommonsChunkPlugin("common.js"),
+        new webpack.HotModuleReplacementPlugin(),
+        //将样式统一发布到style.css中
+        //new ExtractTextPlugin("style.css", {
+        //    allChunks: true,
+        //    disable: false
+        //})
     ],
     resolve: {
         extensions: ['', '.js', '.jsx']
@@ -41,15 +50,19 @@ module.exports = {
                 exclude: /node_modules/,
                 loader: 'react-hot!jsx-loader?harmony'
             }, {
+                // 使用 style-loader、css-loader 和 sass-loader 来编译处理
                 test: /\.less/,
                 loader: 'style-loader!css-loader!less-loader'
             }, {
+                //.css 文件使用 style-loader 和 css-loader 来处理
                 test: /\.(css)$/,
                 loader: 'style-loader!css-loader'
             }, {
+                //图片文件使用 url-loader 来处理，小于8kb的直接转为base64
                 test: /\.(png|jpg)$/,
                 loader: 'url-loader?limit=8192'
             }
         ]
     }
 };
+
