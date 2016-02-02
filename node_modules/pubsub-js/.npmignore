@@ -1,0 +1,8 @@
+# Aptana files #
+################
+.project
+.settings/
+.tmp*
+jquery.pubsub.js
+/node_modules/
+/out/

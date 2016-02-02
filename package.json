@@ -25,6 +25,7 @@
     "install": "^0.4.1",
     "jsx-loader": "^0.13.2",
     "npm": "^3.6.0",
+    "rctui": "^0.5.2",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
     "react-hot-loader": "^1.3.0",
