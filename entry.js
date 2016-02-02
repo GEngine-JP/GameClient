@@ -1,6 +1,10 @@
-var React = require('react/addons');
-var ReactDom = require('react/react-dom');
-var SurveyList = require('./src/component/SurveyList.jsx');
+var React = require('react');
+var Hello = React.createClass({
+    render: function () {
+        return (
+            <div> hello</div>
+        )
+    }
+});
+React.render(<Hello/>, document.body);
 
-ReactDom.render(<SurveyList></SurveyList>, document.body);
-Perf = React.addons.Perf;

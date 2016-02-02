@@ -13,9 +13,12 @@
  * @Copyright(©) 2015 by xiaomo.
  **/
 var webpack = require('webpack');
+//noinspection JSUnresolvedFunction
 module.exports = {
     entry: [
-        './entry.js'
+        './entry.js',
+        'webpack-dev-server/client?http://0.0.0.0:8080', // WebpackDevServer host and port
+        'webpack/hot/only-dev-server'
     ],
     output: {
         path: 'src/assets/',

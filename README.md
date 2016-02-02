@@ -18,4 +18,7 @@ npm install react-hot-loader —save
 服务器
 npm install webpack-dev-server --save
 
+启动方式
+webpack-dev-server --hot --quiet
+
 
