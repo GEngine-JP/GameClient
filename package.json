@@ -20,6 +20,7 @@
   "dependencies": {
     "babel-core": "^6.4.5",
     "babel-loader": "^6.2.1",
+    "babel-preset-es2015": "^6.3.13",
     "bootstrap": "^3.3.6",
     "immutable": "^3.7.6",
     "install": "^0.4.1",

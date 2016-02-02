@@ -11,57 +11,53 @@ webpackJsonp([0,1],[
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(3), RootInstanceProvider = __webpack_require__(11), ReactMount = __webpack_require__(13), React = __webpack_require__(66); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */if (true) {
+	    (function () {
+	        var ReactHotAPI = __webpack_require__(3),
+	            RootInstanceProvider = __webpack_require__(11),
+	            ReactMount = __webpack_require__(13),
+	            React = __webpack_require__(66);module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () {
+	            return RootInstanceProvider.getRootInstances(ReactMount);
+	        }, React);
+	    })();
+	}try {
+	    (function () {
 
-	var React = __webpack_require__(66);
-	var ReactDOM = __webpack_require__(170);
-	var ReactUI = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"rctui\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
-	var Form = ReactUI.Form;
-	var FormComponent = React.createClass({displayName: "FormComponent",
-	    render: function () {
-	        return (
-	            React.createElement(Form, {layout: "aligned", onSubmit: function(data)  {return console.log(data);}, data: dataSource("json/form.json")}, 
-	                React.createElement(FormControl, {name: "text", label: "text", type: "text", grid: {width:12/24}, min: 2, max: 6}), 
-	                React.createElement(FormControl, {name: "email", label: "email", type: "email"}, 
-	    React.createElement("span", {className: "rct-input-group"}, 
-	      React.createElement("span", {className: "addon"}, React.createElement(Icon, {icon: "email"})), 
-	      React.createElement(Input, {type: "email"})
-	    )
-	                ), 
-	                React.createElement(FormControl, {grid: {width:13/24}, name: "alpha", label: "alpha", type: "alpha"}), 
-	                React.createElement(FormControl, {grid: {width:14/24}, name: "alphanum", label: "alphanum", type: "alphanum"}), 
-	                React.createElement(FormControl, {grid: {width:15/24}, name: "integer", label: "integer", type: "integer"}), 
-	                React.createElement(FormControl, {grid: {width:16/24}, name: "number", label: "number", type: "number"}), 
-	                React.createElement(FormControl, {grid: {width:17/24}, name: "url", label: "url", type: "url"}), 
-	                React.createElement(FormControl, {grid: {width:17/24}, name: "readonly", readOnly: true, label: "readonly", type: "text"}), 
-	                React.createElement(FormControl, {name: "checkbox", type: "checkbox", text: "It's a checkbox"}), 
-	                React.createElement(FormControl, {name: "datetime", type: "datetime", label: "datetime"}), 
-	                React.createElement(FormControl, {name: "checkboxgroup", data: ["中国", "美国", "俄罗斯", "德国", "日本", "法国", "英格兰"], 
-	                             label: "checkbox group", type: "checkbox-group"}), 
-	                React.createElement(FormControl, {name: "radiogroup", data: ["中国", "美国", "俄罗斯", "德国", "日本", "法国", "英格兰"], label: "radio group", 
-	                             inline: true, type: "radio-group"}), 
-	                React.createElement(FormControl, {name: "rating", label: "rating", required: true, maxValue: 10, tip: "亲，给个好评吧", type: "rating"}), 
-	                React.createElement(FormControl, {grid: {width:12/24}, name: "select", label: "select", type: "select", 
-	                             data: dataSource("json/countries.json"), mult: true, filterAble: true, 
-	                             optionTpl: "<img src=\"images/flags/{code}.png\" /> {country}-{en}", valueTpl: "{en}"}), 
-	                React.createElement(FormControl, {name: "tree", selectAble: true, label: "tree", type: "tree", data: dataSource("json/tree.json"), 
-	                             textTpl: "{text}({id})", valueTpl: "{id}"}), 
-	                React.createElement(FormControl, {grid: {width:18/24}, name: "textarea", label: "textarea", rows: 5, type: "textarea"}), 
-	                React.createElement(FormControl, {label: "upload", type: "upload", autoUpload: true, grid: {width:12/24}, name: "upload", 
-	                             action: "http://216.189.159.94:8080/upload", accept: "image/*", limit: 3, 
-	                             content: React.createElement(Button, null, React.createElement(Icon, {icon: "upload"}), " 选择文件")}), 
+	        var React = __webpack_require__(66);
+	        var ReactDOM = __webpack_require__(170);
+	        var ReactUI = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"rctui\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	        var Form = ReactUI.Form;
+	        var FormComponent = React.createClass({ displayName: "FormComponent",
+	            render: function () {
+	                return React.createElement(Form, { layout: "aligned", onSubmit: function (data) {
+	                        return console.log(data);
+	                    }, data: dataSource("json/form.json") }, React.createElement(FormControl, { name: "email", label: "email", type: "email" }), React.createElement(FormControl, { name: "datetime", type: "datetime", label: "datetime" }), React.createElement(FormControl, { name: "radiogroup", data: ["中国", "美国", "俄罗斯", "德国", "日本", "法国", "英格兰"], label: "radio group",
+	                    inline: true, type: "radio-group" }), React.createElement(FormSubmit, null, React.createElement("span", null, "提交"), React.createElement("span", null, "处理中")));
+	            }
+	        });
+	        ReactDOM.render(React.createElement(FormComponent, null), document.getElementById("app"));
 
-	                React.createElement(FormSubmit, null, 
-	                    React.createElement("span", null, "提交"), 
-	                    React.createElement("span", null, "处理中")
-	                )
-	            )
-	        )
+	        /* REACT HOT LOADER */
+	    }).call(this);
+	} finally {
+	    if (true) {
+	        (function () {
+	            var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false;if (module.exports && module.makeHot) {
+	                var makeExportsHot = __webpack_require__(172);if (makeExportsHot(module, __webpack_require__(66))) {
+	                    foundReactClasses = true;
+	                }var shouldAcceptModule = true && foundReactClasses;if (shouldAcceptModule) {
+	                    module.hot.accept(function (err) {
+	                        if (err) {
+	                            console.error("Cannot not apply hot update to " + "entry.js" + ": " + err.message);
+	                        }
+	                    });
+	                }
+	            }module.hot.dispose(function (data) {
+	                data.makeHot = module.makeHot;data.foundReactClasses = foundReactClasses;
+	            });
+	        })();
 	    }
-	});
-	ReactDOM.render(React.createElement(FormComponent, null),document.getElementById("app"));
-
-	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(172); if (makeExportsHot(module, __webpack_require__(66))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "entry.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	}
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)(module)))
 
 /***/ },
@@ -23758,7 +23754,7 @@ webpackJsonp([0,1],[
 	  , XhrDriver = __webpack_require__(206)
 	  ;
 
-	function XHRLocalObject(method, url, payload /* opts */) {
+	function XHRLocalObject(method, url, payload /*, opts */) {
 	  XhrDriver.call(this, method, url, payload, {
 	    noCredentials: true
 	  });
@@ -26569,7 +26565,7 @@ webpackJsonp([0,1],[
 	};
 
 	defineProperties(ArrayPrototype, {
-	    forEach: function forEach(fun /* thisp*/) {
+	    forEach: function forEach(fun /*, thisp*/) {
 	        var object = toObject(this),
 	            self = splitString && isString(this) ? this.split('') : object,
 	            thisp = arguments[1],
@@ -26597,7 +26593,7 @@ webpackJsonp([0,1],[
 	// https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/indexOf
 	var hasFirefox2IndexOfBug = Array.prototype.indexOf && [0, 1].indexOf(1, 2) !== -1;
 	defineProperties(ArrayPrototype, {
-	    indexOf: function indexOf(sought /* fromIndex */ ) {
+	    indexOf: function indexOf(sought /*, fromIndex */ ) {
 	        var self = splitString && isString(this) ? this.split('') : toObject(this),
 	            length = self.length >>> 0;
 
