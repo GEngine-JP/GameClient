@@ -31,6 +31,7 @@ module.exports = {
         //提公用js到common.js文件中
         new webpack.optimize.CommonsChunkPlugin("common.js"),
         new webpack.HotModuleReplacementPlugin(),
+        new webpack.NoErrorsPlugin()
         //将样式统一发布到style.css中
         //new ExtractTextPlugin("style.css", {
         //    allChunks: true,
@@ -43,17 +44,16 @@ module.exports = {
     module: {
         loaders: [
             {
-                test: /\.jsx$/,
-                loader: 'babel!jsx-loader?harmony',
-            }, {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                loader: 'babel',
+                loader: 'babel-loader!react-hot',
                 query: {
                     presets: ['es2015']
                 }
-            },
-            {
+            }, {
+                test: /\.jsx$/,
+                loader: 'babel-loader'
+            }, {
                 // 使用 style-loader、css-loader 和 sass-loader 来编译处理
                 test: /\.less/,
                 loader: 'style-loader!css-loader!less-loader'
