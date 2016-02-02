@@ -1,0 +1,20 @@
+# maven #
+target
+
+logs
+
+# eclipse #
+.settings
+.project
+.classpath
+.log
+.idea
+*/*/*/*/WEB-INF/classes
+# windows #
+Thumbs.db
+# Mac #
+.DS_Store
+
+# Package Files #
+*.war
+*.ear
