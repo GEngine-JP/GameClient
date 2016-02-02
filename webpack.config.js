@@ -44,11 +44,14 @@ module.exports = {
         loaders: [
             {
                 test: /\.jsx$/,
-                loader: 'babel!babel-loader!jsx-loader?harmony',
+                loader: 'babel!jsx-loader?harmony',
             }, {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                loader: 'babel!react-hot!babel-loader!jsx-loader?harmony',
+                loader: 'babel',
+                query: {
+                    presets: ['es2015']
+                }
             },
             {
                 // 使用 style-loader、css-loader 和 sass-loader 来编译处理
