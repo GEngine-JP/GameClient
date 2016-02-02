@@ -20,6 +20,7 @@
   "dependencies": {
     "babel-core": "^6.4.5",
     "babel-loader": "^6.2.1",
+    "bootstrap": "^3.3.6",
     "immutable": "^3.7.6",
     "install": "^0.4.1",
     "jsx-loader": "^0.13.2",
