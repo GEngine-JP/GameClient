@@ -43,17 +43,13 @@ module.exports = {
     module: {
         loaders: [
             {
-                test: /\.jsx$/,
-                loader: 'babel!jsx-loader?harmony',
+                test: /\.jsx?$/,
+                loaders: ['jsx?harmony']
             }, {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                loader: 'babel',
-                query: {
-                    presets: ['es2015']
-                }
-            },
-            {
+                loader: 'react-hot!jsx-loader?harmony'
+            }, {
                 // 使用 style-loader、css-loader 和 sass-loader 来编译处理
                 test: /\.less/,
                 loader: 'style-loader!css-loader!less-loader'
