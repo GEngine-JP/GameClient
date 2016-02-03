@@ -24,7 +24,8 @@ module.exports = {
     output: {
         path: 'src/assets/',
         publicPath: "/assets/",
-        filename: 'bundle.js'
+        filename: 'bundle.js',
+        css: 'style.css'
     },
     plugins: [
         //提公用js到common.js文件中
@@ -38,7 +39,7 @@ module.exports = {
         //})
     ],
     resolve: {
-        extensions: ['', '.js', '.jsx']
+        extensions: ['', '.js', '.jsx','.css']
     },
     module: {
         loaders: [
@@ -48,7 +49,7 @@ module.exports = {
             }, {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                loader: 'react-hot!babel!jsx-loader?harmony'
+                loader: 'react-hot-loader!babel!jsx-loader?harmony'
             }, {
                 // 使用 style-loader、css-loader 和 sass-loader 来编译处理
                 test: /\.less/,
@@ -61,8 +62,13 @@ module.exports = {
                 //图片文件使用 url-loader 来处理，小于8kb的直接转为base64
                 test: /\.(png|jpg)$/,
                 loader: 'url-loader?limit=8192'
+            },
+            {
+                test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+                loader: 'url?limit=10000&minetype=application/font-woff'
             }
-        ]
+        ],
+        noParse: /\.min\.js/
     }
 };
 

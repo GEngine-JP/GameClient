@@ -21,6 +21,9 @@ webpack —config webpack.custom.config.js
 Webpack开发服务器需要单独安装，同样是通过npm进行：
 npm install -g webpack-dev-server
 
+编译
+webpack --display-error-details
+
 Webpack模块加载器（Loaders）
 npm install jsx-loader --save
 
@@ -34,4 +37,4 @@ npm install webpack-dev-server --save
 启动方式
 webpack-dev-server --hot --quiet
 
-
+监控文件变化自动编译

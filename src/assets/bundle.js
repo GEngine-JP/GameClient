@@ -17,7 +17,7 @@ webpackJsonp([0,1],[
 	var ReactDOM = __webpack_require__(170);
 	var FormComponent = React.createClass({ displayName: "FormComponent",
 	    render: function () {
-	        return React.createElement("div", null, "hello");
+	        return React.createElement("div", null, "hello world1");
 	    }
 	});
 	ReactDOM.render(React.createElement(FormComponent, null), document.getElementById("app"));

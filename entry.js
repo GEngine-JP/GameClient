@@ -3,7 +3,7 @@ var ReactDOM = require('react-dom');
 var FormComponent = React.createClass({
     render: function () {
         return (
-            <div>hello</div>
+            <div>hello world</div>
         )
     }
 });
