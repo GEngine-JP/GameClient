@@ -15,14 +15,12 @@ webpackJsonp([0,1],[
 
 	var React = __webpack_require__(66);
 	var ReactDOM = __webpack_require__(170);
-	var FormComponent = React.createClass({displayName: "FormComponent",
+	var FormComponent = React.createClass({ displayName: "FormComponent",
 	    render: function () {
-	        return (
-	            React.createElement("div", null, "hello")
-	        )
+	        return React.createElement("div", null, "hello");
 	    }
 	});
-	ReactDOM.render(React.createElement(FormComponent, null),document.getElementById("app"));
+	ReactDOM.render(React.createElement(FormComponent, null), document.getElementById("app"));
 
 	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(171); if (makeExportsHot(module, __webpack_require__(66))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "entry.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)(module)))

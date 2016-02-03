@@ -48,7 +48,7 @@ module.exports = {
             }, {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                loader: 'react-hot!jsx-loader?harmony'
+                loader: 'react-hot!babel!jsx-loader?harmony'
             }, {
                 // 使用 style-loader、css-loader 和 sass-loader 来编译处理
                 test: /\.less/,
