@@ -18,8 +18,7 @@ module.exports = {
     entry: [
         //页面入口文件配置
         './entry.js',
-        // server
-        'webpack-dev-server/client?http://0.0.0.0:8080', // WebpackDevServer host and port
+        'webpack-dev-server/client?http://127.0.0.1:8080',
         'webpack/hot/only-dev-server'
     ],
     output: {
@@ -31,6 +30,7 @@ module.exports = {
         //提公用js到common.js文件中
         new webpack.optimize.CommonsChunkPlugin("common.js"),
         new webpack.HotModuleReplacementPlugin(),
+        new webpack.NoErrorsPlugin()
         //将样式统一发布到style.css中
         //new ExtractTextPlugin("style.css", {
         //    allChunks: true,
