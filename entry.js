@@ -1,17 +1,18 @@
 var React = require('react');
+var ReactDOM = require('react-dom');
 // 应用入口
-var Router = ReactRouter; // 由于是html直接引用的库，所以 ReactRouter 是以全局变量的形式挂在 window 上
-var Route = ReactRouter.Route;
-var RouteHandler = ReactRouter.RouteHandler;
-var Link = ReactRouter.Link;
-var StateMixin = ReactRouter.State;
+var Router  = require('react-router');
+var Route = Router .Route;
+var RouteHandler = Router .RouteHandler;
+var Link = Router .Link;
+var StateMixin = Router .State;
 
 
 /**
  * 图书列表组件
  */
 var Books = React.createClass({
-    render: function() {
+    render: function () {
         return (
             <ul>
                 <li key={1}><Link to="book" params={{id: 1}}>活着</Link></li>
@@ -29,7 +30,7 @@ var Books = React.createClass({
 var Book = React.createClass({
     mixins: [StateMixin],
 
-    render: function() {
+    render: function () {
         return (
             <article>
                 <h1>这里是图书 id 为 {this.getParams()['id']} 的详情介绍</h1>
@@ -42,7 +43,7 @@ var Book = React.createClass({
  * 电影列表组件
  */
 var Movies = React.createClass({
-    render: function() {
+    render: function () {
         return (
             <ul>
                 <li key={1}><Link to="movie" params={{id: 1}}>煎饼侠</Link></li>
@@ -59,7 +60,7 @@ var Movies = React.createClass({
 var Movie = React.createClass({
     mixins: [StateMixin],
 
-    render: function() {
+    render: function () {
         return (
             <article>
                 <h1>这里是电影 id 为 {this.getParams().id} 的详情介绍</h1>
@@ -69,13 +70,9 @@ var Movie = React.createClass({
 });
 
 
-
-
-
-
 // 应用入口
 var App = React.createClass({
-    render: function() {
+    render: function () {
         return (
             <div className="app">
                 <nav>
@@ -94,16 +91,17 @@ var App = React.createClass({
 // 定义页面上的路由
 var routes = (
     <Route handler={App}>
-        <Route name="movies" handler={Movies} />
-        <Route name="movie" path="/movie/:id" handler={Movie} />
-        <Route name="books" handler={Books} />
-        <Route name="book" path="/book/:id" handler={Book} />
+
+        <Route name="movies" handler={Movies}/>
+        <Route name="movie" path="/movie/:id" handler={Movie}/>
+        <Route name="books" handler={Books}/>
+        <Route name="book" path="/book/:id" handler={Book}/>
     </Route>
 );
 
 
 // 将匹配的路由渲染到 DOM 中
 Router.run(routes, Router.HashLocation, function(Root){
-    React.render(<Root />, document.getElementById("app"));
+    ReactDOM.render(<Root/>, document.getElementById("app"));
 });
 
