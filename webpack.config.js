@@ -17,7 +17,7 @@ var webpack = require('webpack');
 module.exports = {
     entry: [
         //页面入口文件配置
-        './entry.js',
+        './app.ts',
         'webpack-dev-server/client?http://127.0.0.1:8080',
         'webpack/hot/only-dev-server'
     ],
@@ -38,12 +38,16 @@ module.exports = {
         //    disable: false
         //})
     ],
+    devtool: 'source-map',
     resolve: {
-        extensions: ['', '.js', '.jsx','.css']
+        extensions: ['', '.webpack.js', '.web.js', '.ts', '.js']
     },
     module: {
         loaders: [
             {
+                test: /\.ts$/,
+                loader: 'ts-loader'
+            }, {
                 test: /\.jsx?$/,
                 loaders: ['jsx?harmony']
             }, {
@@ -51,15 +55,12 @@ module.exports = {
                 exclude: /node_modules/,
                 loader: 'react-hot-loader!babel!jsx-loader?harmony'
             }, {
-                // 使用 style-loader、css-loader 和 sass-loader 来编译处理
                 test: /\.less/,
                 loader: 'style-loader!css-loader!less-loader'
             }, {
-                //.css 文件使用 style-loader 和 css-loader 来处理
                 test: /\.(css)$/,
                 loader: 'style-loader!css-loader'
             }, {
-                //图片文件使用 url-loader 来处理，小于8kb的直接转为base64
                 test: /\.(png|jpg)$/,
                 loader: 'url-loader?limit=8192'
             },

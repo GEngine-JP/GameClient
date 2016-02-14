@@ -9,6 +9,7 @@ logs
 .classpath
 .log
 .idea
+*.iml
 */*/*/*/WEB-INF/classes
 # windows #
 Thumbs.db
