@@ -20,6 +20,13 @@
   },
   "homepage": "https://github.com/qq83387856/xiaomo-web#readme",
   "dependencies": {
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "react-router": "^v0.13.3",
+    "react-tools": "^0.13.3",
+    "reactify": "^1.1.1"
+  },
+  "devDependencies": {
     "babel-core": "^6.4.5",
     "babel-loader": "^6.2.1",
     "babel-preset-es2015": "^6.3.13",
@@ -29,16 +36,6 @@
     "immutable": "^3.7.6",
     "install": "^0.4.1",
     "jsx-loader": "^0.13.2",
-    "npm": "^3.6.0",
-    "rctui": "^0.5.2",
-    "react": "^0.14.7",
-    "react-dom": "^0.14.7",
-    "react-router": "^v0.13.3",
-    "react-tools": "^0.13.3",
-    "react-ui": "^0.6.2",
-    "reactify": "^1.1.1"
-  },
-  "devDependencies": {
     "react-hot-loader": "^1.3.0",
     "webpack": "^1.12.12"
   }

@@ -14,7 +14,7 @@ logs
 Thumbs.db
 # Mac #
 .DS_Store
-
+node_modules
 # Package Files #
 *.war
 *.ear
