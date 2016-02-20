@@ -9,7 +9,6 @@ logs
 .classpath
 .log
 .idea
-*.iml
 */*/*/*/WEB-INF/classes
 # windows #
 Thumbs.db
@@ -19,3 +18,6 @@ node_modules
 # Package Files #
 *.war
 *.ear
+src/ts/*.js
+src/ts/*.map
+build/*.js

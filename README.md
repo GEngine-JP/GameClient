@@ -1,3 +1,5 @@
+#npm run dev 启动服务器  并自动刷新浏览器
+
 文章来源：http://www.infoq.com/cn/articles/react-and-webpack
 使用webpack       code splitting(自动完成) 和loader(处理各类静态资源)
 npm install -g webpack
