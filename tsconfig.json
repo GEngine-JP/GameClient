@@ -1,0 +1,36 @@
+{
+    "version": "1.5.0",
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "declaration": false,
+        "noImplicitAny": false,
+        "removeComments": true,
+        "experimentalDecorators": true,
+        "noLib": false,
+        "emitDecoratorMetadata": true
+    },
+    "filesGlob": [
+        "./**/*.ts",
+        "!./node_modules/**/*.ts"
+    ],
+    "files": [
+        "node_modules/angular2/ts/typings/node/node.d.ts",
+        "node_modules/angular2/typings/browser.d.ts",
+        "./app/ts/app.html5.ts",
+        "./app/ts/app.ts",
+        "./app/ts/components/AboutComponent.ts",
+        "./app/ts/components/ContactComponent.ts",
+        "./app/ts/components/HomeComponent.ts",
+        "./typings/moment/moment-node.d.ts",
+        "./typings/moment/moment.d.ts",
+        "./typings/tsd.d.ts",
+        "./typings/underscore/underscore.d.ts",
+        "./vendor.ts"
+    ],
+    "compileOnSave": false,
+    "exclude": [],
+    "atom": {
+        "rewriteTsconfig": true
+    }
+}

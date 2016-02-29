@@ -1,23 +1,15 @@
-# maven #
-target
+# Created by .ignore support plugin (hsz.mobi)
+### Example user template template
+### Example user template
 
-logs
-
-# eclipse #
-.settings
-.project
-.classpath
-.log
+# IntelliJ project files
 .idea
-*/*/*/*/WEB-INF/classes
-# windows #
-Thumbs.db
-# Mac #
-.DS_Store
+*.iml
+out
+gen
 node_modules
-# Package Files #
-*.war
-*.ear
-src/ts/*.js
-src/ts/*.map
-build/*.js
+build
+app/ts/*.js
+app/ts/*.map
+app/ts/components/*.js
+app/ts/components/*.map
