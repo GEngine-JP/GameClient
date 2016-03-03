@@ -13,6 +13,7 @@ var router_1 = require('angular2/router');
 var HomeComponent_1 = require('./components/HomeComponent');
 var AboutComponent_1 = require('./components/AboutComponent');
 var ContactComponent_1 = require('./components/ContactComponent');
+var LoginComponent_1 = require('./components/LoginComponent');
 require('css/styles.scss');
 var RoutesDemoApp = (function () {
     function RoutesDemoApp() {
@@ -28,6 +29,7 @@ var RoutesDemoApp = (function () {
             { path: '/home', name: 'Home', component: HomeComponent_1.HomeComponent },
             { path: '/about', name: 'About', component: AboutComponent_1.AboutComponent },
             { path: '/contact', name: 'Contact', component: ContactComponent_1.ContactComponent },
+            { path: '/login', name: 'Login', component: LoginComponent_1.LoginComponent },
             { path: '/contactus', name: 'ContactUs', redirectTo: ['/Contact'] },
         ]), 
         __metadata('design:paramtypes', [])

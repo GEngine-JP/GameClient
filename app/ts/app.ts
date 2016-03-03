@@ -18,6 +18,7 @@ import {
 import {HomeComponent} from './components/HomeComponent';
 import {AboutComponent} from './components/AboutComponent';
 import {ContactComponent} from './components/ContactComponent';
+import {LoginComponent} from './components/LoginComponent';
 
 /*
  * Webpack
@@ -34,6 +35,7 @@ require('css/styles.scss');
   { path: '/home', name: 'Home', component: HomeComponent },
   { path: '/about', name: 'About', component: AboutComponent },
   { path: '/contact', name: 'Contact', component: ContactComponent },
+  { path: '/login', name: 'Login', component: LoginComponent },
   { path: '/contactus', name: 'ContactUs', redirectTo: ['/Contact'] },
 ])
 class RoutesDemoApp {
