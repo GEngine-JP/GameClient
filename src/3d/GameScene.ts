@@ -90,6 +90,7 @@ class GameScene {
     protected onAnimationComplete(e: egret3d.LoaderEvent3D) {
         console.log("onAnimationComplete");
         this.mesh.animation.play("idle");
+        
     }
 
     protected onAnimationCycle(e: egret3d.LoaderEvent3D) {
