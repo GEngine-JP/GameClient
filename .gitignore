@@ -13,3 +13,5 @@ app/ts/*.js
 app/ts/*.map
 app/ts/components/*.js
 app/ts/components/*.map
+*.map
+*.js
