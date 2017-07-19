@@ -8,6 +8,7 @@
     "path": "bin-release"
   },
   "egret_version": "5.0.2",
+  "template": {},
   "modules": [
     {
       "name": "egret"
@@ -16,16 +17,14 @@
       "name": "game"
     },
     {
-      "name": "egret3d"
+      "name": "tween"
     },
     {
-      "name": "resourcemanager",
-      "path": "resourcemanager"
+      "name": "res"
     },
     {
       "name": "promise",
       "path": "./promise"
     }
-  ],
-  "template": {}
+  ]
 }
