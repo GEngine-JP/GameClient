@@ -8,7 +8,13 @@
 		"promise/bin/promise.js"
 	],
 	"game": [
+		"bin-debug/data/element/BaseElement.js",
+		"bin-debug/data/element/GameElement.js",
+		"bin-debug/data/element/LevelRequireElement.js",
+		"bin-debug/data/GamaData.js",
+		"bin-debug/data/LevelRequire.js",
 		"bin-debug/LoadingUI.js",
-		"bin-debug/Main.js"
+		"bin-debug/Main.js",
+		"bin-debug/util/GameUtil.js"
 	]
 }
