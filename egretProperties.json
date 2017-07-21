@@ -22,6 +22,15 @@
     {
       "name": "res"
     },
+     {
+      "name": "eui"
+    },
+    {
+			"name": "dragonbones"
+		},
+    {
+      "name": "socket"
+    },
     {
       "name": "promise",
       "path": "./promise"

@@ -5,6 +5,9 @@
 		"libs/modules/game/game.js",
 		"libs/modules/tween/tween.js",
 		"libs/modules/res/res.js",
+		"libs/modules/eui/eui.js",
+		"libs/modules/dragonBones/dragonBones.js",
+		"libs/modules/socket/socket.js",
 		"promise/bin/promise.js"
 	],
 	"game": [
@@ -15,6 +18,7 @@
 		"bin-debug/data/LevelRequire.js",
 		"bin-debug/LoadingUI.js",
 		"bin-debug/Main.js",
+		"bin-debug/net/WebSocket.js",
 		"bin-debug/util/GameUtil.js"
 	]
 }
