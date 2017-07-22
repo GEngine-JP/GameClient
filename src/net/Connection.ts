@@ -37,18 +37,15 @@ class Connection extends egret.DisplayObjectContainer {
         //添加异常侦听，出现异常会调用此方法
         this.socket.addEventListener(egret.IOErrorEvent.IO_ERROR, this.onSocketError, this);
         //连接服务器
-        this.socket.connect("echo.websocket.org", 80);
+        this.socket.connect("localhost", 8001);
     }
 
     private sendData():void {
         //创建 ByteArray 对象
         var byte:egret.ByteArray = new egret.ByteArray();
-        //写入字符串信息
-        byte.writeUTF("Hello Egret WebSocket");
-        //写入布尔值信息
-        byte.writeBoolean(false);
-        //写入int值信息
-        byte.writeInt(123);
+        byte.writeInt(10);
+        byte.writeInt(1001);
+        byte.writeInt(1);
         byte.position = 0;
         //发送数据
         this.socket.writeBytes(byte, 0, byte.bytesAvailable);
