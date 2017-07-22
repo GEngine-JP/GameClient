@@ -1,7 +1,7 @@
 /**
  * 下面的示例使用 WebSocketExample 类创建新 WebSocket 对象，然后与服务器通讯。
  */
-class WebSocketExample extends egret.DisplayObjectContainer {
+class Connection extends egret.DisplayObjectContainer {
 
     public constructor() {
         super();
