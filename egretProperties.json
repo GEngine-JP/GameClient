@@ -1,39 +1,39 @@
 {
-  "native": {
-    "path_ignore": []
-  },
-  "publish": {
-    "web": 0,
-    "native": 1,
-    "path": "bin-release"
-  },
-  "egret_version": "5.0.2",
-  "template": {},
-  "modules": [
-    {
-      "name": "egret"
-    },
-    {
-      "name": "game"
-    },
-    {
-      "name": "tween"
-    },
-    {
-      "name": "res"
-    },
-     {
-      "name": "eui"
-    },
-    {
+	"native": {
+		"path_ignore": []
+	},
+	"publish": {
+		"web": 0,
+		"native": 1,
+		"path": "bin-release"
+	},
+	"egret_version": "5.0.3",
+	"template": {},
+	"modules": [
+		{
+			"name": "egret"
+		},
+		{
+			"name": "game"
+		},
+		{
+			"name": "tween"
+		},
+		{
+			"name": "res"
+		},
+		{
+			"name": "eui"
+		},
+		{
 			"name": "dragonbones"
 		},
-    {
-      "name": "socket"
-    },
-    {
-      "name": "promise",
-      "path": "./promise"
-    }
-  ]
+		{
+			"name": "socket"
+		},
+		{
+			"name": "promise",
+			"path": "./promise"
+		}
+	]
 }

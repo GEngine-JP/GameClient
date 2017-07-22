@@ -3130,6 +3130,9 @@ var egret;
 (function (egret) {
     var web;
     (function (web) {
+        /**
+         * @private
+         */
         web.WebLifeCycleHandler = function (context) {
             var handleVisibilityChange = function () {
                 if (!document[hidden]) {
@@ -3570,6 +3573,11 @@ var egret;
             if (egret.Capabilities.$renderMode == "webgl") {
                 egret.sys.DisplayList.prototype.setDirtyRegionPolicy = function () { };
             }
+            window.addEventListener("resize", function () {
+                if (isNaN(resizeTimer)) {
+                    resizeTimer = window.setTimeout(doResize, 300);
+                }
+            });
         }
         /**
          * 设置渲染模式。"auto","webgl","canvas"
@@ -3632,11 +3640,6 @@ var egret;
                 customContext.onResize(context);
             }
         }
-        window.addEventListener("resize", function () {
-            if (isNaN(resizeTimer)) {
-                resizeTimer = window.setTimeout(doResize, 300);
-            }
-        });
     })(web = egret.web || (egret.web = {}));
 })(egret || (egret = {}));
 if (true) {
@@ -4057,7 +4060,7 @@ var egret;
                 container.appendChild(canvas);
                 style = container.style;
                 style.overflow = "hidden";
-                style.position = "relative";
+                style.position = "absolute";
             };
             /**
              * @private
@@ -7323,7 +7326,7 @@ var egret;
                         minY = (y0 < y2 ? y0 : y2);
                         maxY = (y1 > y3 ? y1 : y3);
                     }
-                    context.enableScissor(minX + matrix.tx, -matrix.ty - maxY + buffer.height, maxX - minX, maxY - minY);
+                    context.enableScissor(minX, -maxY + buffer.height, maxX - minX, maxY - minY);
                     scissor = true;
                 }
                 drawCalls += this.drawDisplayObject(displayObject, buffer, dirtyList, matrix, displayObject.$displayList, region, root);
