@@ -10,10 +10,10 @@ class Connection extends egret.DisplayObjectContainer {
         this.initWebSocket();
     }
 
-    private stateText:egret.TextField;
-    private text:string = "TestWebSocket";
+    private stateText: egret.TextField;
+    private text: string = "TestWebSocket";
 
-    private initStateText():void {
+    private initStateText(): void {
         this.stateText = new egret.TextField();
         this.stateText.size = 22;
         this.stateText.text = this.text;
@@ -21,9 +21,9 @@ class Connection extends egret.DisplayObjectContainer {
         this.addChild(this.stateText);
     }
 
-    private socket:egret.WebSocket;
+    private socket: egret.WebSocket;
 
-    private initWebSocket():void {
+    private initWebSocket(): void {
         //创建 WebSocket 对象
         this.socket = new egret.WebSocket();
         //设置数据格式为二进制，默认为字符串
@@ -40,49 +40,55 @@ class Connection extends egret.DisplayObjectContainer {
         this.socket.connect("localhost", 8001);
     }
 
-    private sendData():void {
+    private sendData(): void {
         //创建 ByteArray 对象
-        var byte:egret.ByteArray = new egret.ByteArray();
-        byte.writeInt(10);
-        byte.writeInt(1003);
+
+        var size: number = 0;
+        var content: egret.ByteArray = new egret.ByteArray();
+        // content.writeInt(1);
+        content.writeUTF("xiaomo");
+        // content.writeUTF("b");
+
+        if (content) {
+            content.position = 0;
+            size = content.length + 10;
+        }
+
+        var byte: egret.ByteArray = new egret.ByteArray();
+        byte.writeInt(size);
+        byte.writeInt(1007);
         byte.writeShort(1);
-        byte.position = 0;
+        byte.writeBytes(content);
+
         //发送数据
-        this.socket.writeBytes(byte, 0, byte.bytesAvailable);
+        this.socket.writeBytes(byte, 0, byte.length);
     }
 
-    private onSocketOpen():void {
+    private onSocketOpen(): void {
         this.trace("WebSocketOpen");
         this.sendData();
     }
 
-    private onSocketClose():void {
+    private onSocketClose(): void {
         this.trace("WebSocketClose");
     }
 
-    private onSocketError():void {
+    private onSocketError(): void {
         this.trace("WebSocketError");
     }
 
-    private onReceiveMessage(e:egret.Event):void {
+    private onReceiveMessage(e: egret.Event): void {
         //创建 ByteArray 对象
-        var byte:egret.ByteArray = new egret.ByteArray();
+        var byte: egret.ByteArray = new egret.ByteArray();
         //读取数据
         this.socket.readBytes(byte);
         //读取字符串信息
-        var msg:string = byte.readUTF();
-        //读取布尔值信息
-        var boo:boolean = byte.readBoolean();
-        //读取int值信息
-        var num:number = byte.readInt();
-        this.trace("收到数据:");
-        this.trace("readUTF : "+msg);
-        this.trace("readBoolean : "+boo.toString());
-        this.trace("readInt : "+num.toString());
+        var msg:number = byte.readUnsignedInt();
+        console.log(msg);
     }
 
 
-    private trace(msg:any):void {
+    private trace(msg: any): void {
         this.text = this.text + "\n" + msg;
         this.stateText.text = this.text;
         egret.log(msg);
