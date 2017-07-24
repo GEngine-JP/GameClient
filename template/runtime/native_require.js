@@ -30,7 +30,19 @@ egret_native.egretStart = function () {
     var option = {
         //以下为自动修改，请勿修改
         //----auto option start----
-        //----auto option end----
+		entryClassName: "Main",
+		frameRate: 30,
+		scaleMode: "showAll",
+		contentWidth: 640,
+		contentHeight: 1136,
+		showPaintRect: false,
+		showFPS: false,
+		fpsStyles: "x:0,y:0,size:12,textColor:0xffffff,bgAlpha:0.9",
+		showLog: false,
+		logFilter: "",
+		maxTouches: 2,
+		textureScaleFactor: 1
+		//----auto option end----
     };
 
     egret.native.NativePlayer.option = option;

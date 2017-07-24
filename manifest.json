@@ -18,7 +18,7 @@
 		"bin-debug/data/LevelRequire.js",
 		"bin-debug/LoadingUI.js",
 		"bin-debug/Main.js",
-		"bin-debug/net/WebSocket.js",
+		"bin-debug/net/Connection.js",
 		"bin-debug/util/GameUtil.js"
 	]
 }
