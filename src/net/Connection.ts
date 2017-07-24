@@ -45,7 +45,7 @@ class Connection extends egret.DisplayObjectContainer {
         var byte:egret.ByteArray = new egret.ByteArray();
         byte.writeInt(10);
         byte.writeInt(1001);
-        byte.writeInt(1);
+        byte.writeShort(1);
         byte.position = 0;
         //发送数据
         this.socket.writeBytes(byte, 0, byte.bytesAvailable);
