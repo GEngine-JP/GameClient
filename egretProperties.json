@@ -23,13 +23,18 @@
 			"name": "res"
 		},
 		{
-			"name": "eui"
-		},
-		{
 			"name": "dragonbones"
 		},
 		{
 			"name": "socket"
+		},
+		{
+			"name": "fairygui",
+			"path": "libs/fairygui"
+		},
+		{
+			"name": "rawinflate",
+			"path": "libs/rawinflate"
 		},
 		{
 			"name": "promise",
