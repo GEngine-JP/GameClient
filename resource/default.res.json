@@ -1,23 +1,20 @@
 {
-	"groups":[
-	{
-		"keys":"bg_jpg,egret_icon_png,description_json",
-		"name":"preload"
-	}],
-	"resources":[
-	{
-		"name":"bg_jpg",
-		"type":"image",
-		"url":"assets/bg.jpg"
-	},
-	{
-		"name":"egret_icon_png",
-		"type":"image",
-		"url":"assets/egret_icon.png"
-	},
-	{
-		"name":"description_json",
-		"type":"json",
-		"url":"config/description.json"
-	}]
+	"resources": [
+		{
+			"name": "bag",
+			"type": "bin",
+			"url": "assets/bag.fui"
+		},
+		{
+			"name": "bag@atlas0",
+			"type": "image",
+			"url": "assets/bag@atlas0.png"
+		}
+	],
+	"groups": [
+		{
+			"name": "preload",
+			"keys": "bag,bag@atlas0"
+		}
+	]
 }
