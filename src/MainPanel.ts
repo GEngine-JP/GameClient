@@ -10,7 +10,7 @@ class MainPanel {
         this._list = this._view.getChild("list").asList;
         this._list.addEventListener(fairygui.ItemEvent.CLICK,this.__clickItem,this);	
 
-       	for(var i:number = 0;i < 10; i++)
+       	for(var i:number = 0;i < 30; i++)
         {
             var button:fairygui.GButton = this._list.getChildAt(i).asButton;
             button.icon = "resource/assets/i" + Math.floor(Math.random() * 10) +".png";
