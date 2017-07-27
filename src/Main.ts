@@ -1,5 +1,13 @@
+/**
+ * 游戏启动入口
+ */
 class Main extends egret.DisplayObjectContainer {
 
+    /**
+     * 游戏时间记录
+     * 1. 上线时间
+     * 2. 离线时间
+     */
     private gameTime: GameTime;
 
 
@@ -11,9 +19,9 @@ class Main extends egret.DisplayObjectContainer {
 
     /**
      * 添加进场景的时候
-     * @param {egret.Event} event
+     * @param {egret.Event} ignored
      */
-    private onAddToStage(event: egret.Event) {
+    private onAddToStage(ignored: egret.Event) {
         // 初始化游戏
         MtwGame.getInstance.init(this.stage);
         this.gameTime = new GameTime();

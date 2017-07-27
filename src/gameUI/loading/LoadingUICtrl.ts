@@ -7,6 +7,9 @@ class LoadingUICtrl extends BaseUI {
     private loadingView: LoadingUI;
 
 
+    /**
+     * 显示
+     */
     show() {
         console.log("打开loading界面");
         if (this.loadingView == null)
@@ -14,18 +17,25 @@ class LoadingUICtrl extends BaseUI {
         MtwGame.getInstance.stage.addChild(this.loadingView);
     }
 
+    /**
+     * 隐藏
+     */
     hide() {
         if (this.loadingView) {
             MtwGame.getInstance.stage.removeChild(this.loadingView);
         }
     }
 
-    public setProgress(itemsLoaded:number,itemsTotal:number):void{
 
-    }
-
-    public setText(value:string):void{
-        this.loadingView.setStateWord(value);
+    /**
+     * 设置加载进度
+     * @param {number} itemsLoaded
+     * @param {number} itemsTotal
+     */
+    public setProgress(itemsLoaded: number, itemsTotal: number): void {
+        if (this.loadingView) {
+            this.loadingView.setProgress(itemsLoaded, itemsTotal);
+        }
     }
 
 }
