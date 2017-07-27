@@ -5,12 +5,20 @@ class UIManager {
     public constructor() {
     }
 
+
+    /**
+     * 初始化UI控制器
+     */
     public init(): void {
         this.views[UIType.Loading] = new LoadingUICtrl();
         this.views[UIType.Login] = new LoginUICtrl()
-
     }
 
+
+    /**
+     * 显示ui
+     * @param {UIType} uiType
+     */
     public show(uiType: UIType) {
         let view = this.views[uiType];
         if (view) {
@@ -18,6 +26,10 @@ class UIManager {
         }
     }
 
+    /**
+     * 隐藏UI
+     * @param {UIType} uiType
+     */
     public hide(uiType: UIType) {
         let view = this.views[uiType];
         if (view) {
@@ -26,9 +38,13 @@ class UIManager {
     }
 
 
+    /**
+     * 加载fairyUI
+     */
     public static addPackages() {
         let stage: egret.Stage = MtwGame.Instance.stage;
         fairygui.UIPackage.addPackage("Login");
+        fairygui.UIPackage.addPackage("Loading");
         fairygui.UIConfig.defaultFont = "宋体";
         stage.addChild(fairygui.GRoot.inst.displayObject);
     }
@@ -46,7 +62,9 @@ class UIManager {
 
 }
 
-
+/**
+ * 有多少个界面就有多少个类型
+ */
 const enum UIType {
     Loading,
     Login,
