@@ -32,6 +32,9 @@ class GameStateManager {
 
         gameState = new HomeState();
         this.gameStates[GameStateType.Home] = gameState;
+
+        // 初始化为loading状态
+        this.changeGameState(GameStateType.Loading);
     }
 
 

@@ -8,9 +8,13 @@ class Main extends egret.DisplayObjectContainer {
         this.addEventListener(egret.Event.ADDED_TO_STAGE, this.onAddToStage, this);
     }
 
+
+    /**
+     * 添加进场景的时候
+     * @param {egret.Event} event
+     */
     private onAddToStage(event: egret.Event) {
-        //设置加载进度界面
-        //Config to load process interface
+        // 初始化游戏
         MtwGame.getInstance.init(this.stage);
         this.gameTime = new GameTime();
         this.gameTime.totalGameTime = egret.getTimer();
@@ -19,7 +23,11 @@ class Main extends egret.DisplayObjectContainer {
 
     }
 
-
+    /**
+     * 计时器
+     * @param {number} timeStamp
+     * @returns {boolean}
+     */
     private timeTick(timeStamp: number): boolean {
         const now = timeStamp;
         const time = this.gameTime.totalGameTime;

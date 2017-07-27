@@ -14,12 +14,21 @@ class MtwGame {
 
     public init(stage: egret.Stage): void {
         this.stage = stage;
+
+        // 初始化游戏状态
         GameStateManager.getInstance.init();
+
+        // 初始化UI
         UIManager.getInstance.init();
-        GameStateManager.getInstance.changeGameState(GameStateType.Loading);
+
 
     }
 
+
+    /**
+     * 更新游戏时间
+     * @param {GameTime} gameTime
+     */
     public updateTime(gameTime: GameTime): void {
         GameStateManager.getInstance.updateTime(gameTime);
         if (gameTime.totalGameTime > this.heartTime) {
