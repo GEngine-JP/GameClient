@@ -1,6 +1,6 @@
 class NetManager {
 
-    public static readonly Instance: NetManager = new NetManager();
+    public static readonly getInstance: NetManager = new NetManager();
     private connection: Connection = new Connection();
 
     public heart() {

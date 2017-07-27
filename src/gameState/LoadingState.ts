@@ -19,7 +19,7 @@ class LoadingState implements IGameState {
         //initiate Resource loading library
         RES.addEventListener(RES.ResourceEvent.CONFIG_COMPLETE, this.onConfigComplete, this);
         RES.loadConfig("resource/default.res.json", "resource/");
-        UIManager.Instance.show(UIType.Loading);
+        UIManager.getInstance.show(UIType.Loading);
     }
 
     Update(fDeltaTime: number): GameStateType {
@@ -31,7 +31,7 @@ class LoadingState implements IGameState {
     }
 
     exit(): void {
-        UIManager.Instance.hide(UIType.Loading);
+        UIManager.getInstance.hide(UIType.Loading);
     }
 
 
@@ -59,12 +59,12 @@ class LoadingState implements IGameState {
             RES.removeEventListener(RES.ResourceEvent.GROUP_LOAD_ERROR, this.onResourceLoadError, this);
             RES.removeEventListener(RES.ResourceEvent.GROUP_PROGRESS, LoadingState.onResourceProgress, this);
             RES.removeEventListener(RES.ResourceEvent.ITEM_LOAD_ERROR, LoadingState.onItemLoadError, this);
-            // ConfigManager.Instance.initConfigs();
+            // ConfigManager.getInstance.initConfigs();
         }
         UIManager.addPackages();
-        NetManager.Instance.connect("192.168.1.165", 8001);
+        NetManager.getInstance.connect("192.168.1.165", 8001);
         MtwGame.addBg();
-        (UIManager.Instance.getUI(UIType.Loading) as LoadingUICtrl).setText("正在连接服务器。。。");
+        (UIManager.getInstance.getUI(UIType.Loading) as LoadingUICtrl).setText("正在连接服务器。。。");
     }
 
     /**
@@ -80,7 +80,6 @@ class LoadingState implements IGameState {
      *  The resource group loading failed
      */
     private onResourceLoadError(event: RES.ResourceEvent) {
-        //TODO
         console.warn("Group:" + event.groupName + " has failed to load");
         //忽略加载失败的项目
         //Ignore the loading failed projects
@@ -93,7 +92,7 @@ class LoadingState implements IGameState {
      */
     private static onResourceProgress(event: RES.ResourceEvent) {
         if (event.groupName == "preload") {
-            let loadingUI: LoadingUICtrl = <LoadingUICtrl>(UIManager.Instance.getUI(UIType.Loading));
+            let loadingUI: LoadingUICtrl = <LoadingUICtrl>(UIManager.getInstance.getUI(UIType.Loading));
             loadingUI.setProgress(event.itemsLoaded, event.itemsTotal);
         }
     }

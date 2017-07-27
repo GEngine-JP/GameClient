@@ -14,7 +14,7 @@ class CreateRoleState implements IGameState {
 
     enter(): void {
         console.log("进入创角界面");
-        UIManager.Instance.show(UIType.CreateRole);
+        UIManager.getInstance.show(UIType.CreateRole);
     }
 
     Update(fDeltaTime: number): GameStateType {
@@ -26,6 +26,6 @@ class CreateRoleState implements IGameState {
     }
 
     exit(): void {
-        UIManager.Instance.hide(UIType.CreateRole);
+        UIManager.getInstance.hide(UIType.CreateRole);
     }
 }

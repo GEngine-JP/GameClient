@@ -1,6 +1,6 @@
 class GameStateManager {
 
-    public static readonly Instance: GameStateManager = new GameStateManager();
+    public static readonly getInstance: GameStateManager = new GameStateManager();
     private gameStates: { [stateType: number]: IGameState } = {};
     private currentState: IGameState;
 

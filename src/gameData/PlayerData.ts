@@ -1,5 +1,5 @@
 class PlayerData {
-    public static readonly Instance: PlayerData = new PlayerData();
+    public static readonly getInstance: PlayerData = new PlayerData();
 
     public constructor() {
     }

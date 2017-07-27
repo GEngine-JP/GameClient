@@ -7,16 +7,16 @@ class MtwGame {
 	private heartTime:number = 0;
 	public init(stage:egret.Stage):void{
 		this.stage = stage;
-		GameStateManager.Instance.init();
-		UIManager.Instance.init();
-		GameStateManager.Instance.changeGameState(GameStateType.Loading);
+		GameStateManager.getInstance.init();
+		UIManager.getInstance.init();
+		GameStateManager.getInstance.changeGameState(GameStateType.Loading);
 		
 	}
 
 	public updateTime(gameTime:GameTime):void{
-		GameStateManager.Instance.updateTime(gameTime);
+		GameStateManager.getInstance.updateTime(gameTime);
 		if(gameTime.totalGameTime > this.heartTime){
-			NetManager.Instance.heart();
+			NetManager.getInstance.heart();
 			this.heartTime = gameTime.totalGameTime + 15000;
 		}
 	}

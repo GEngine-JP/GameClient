@@ -1,5 +1,5 @@
 class UIManager {
-    public static readonly Instance: UIManager = new UIManager();
+    public static readonly getInstance: UIManager = new UIManager();
     private views: { [uitType: number]: IUIBase } = {};
 
     public constructor() {

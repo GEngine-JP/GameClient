@@ -12,7 +12,7 @@ class LoginState implements IGameState {
 
 	enter():void{
 		console.log("进入LoginState");
-		UIManager.Instance.show(UIType.Login);
+		UIManager.getInstance.show(UIType.Login);
 	}
 
 	Update(fDeltaTime:number):GameStateType{
@@ -24,6 +24,6 @@ class LoginState implements IGameState {
 	}
 
 	exit():void{
-		UIManager.Instance.hide(UIType.Login);
+		UIManager.getInstance.hide(UIType.Login);
 	}
 }

@@ -32,7 +32,7 @@ class LoginUICtrl extends BaseUI {
 
     private submitHandler(e: egret.TouchEvent): void {
         console.log("登录游戏");
-        NetManager.Instance.login(this.view.loginName.text);
+        NetManager.getInstance.login(this.view.loginName.text);
     }
 
     protected closeComplete(): void {

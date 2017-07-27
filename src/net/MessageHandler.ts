@@ -12,20 +12,19 @@ class MessageHandler implements IReceiveHandler {
                 let y = bytes.readInt();//x
                 let serverTime = Long.readLong(bytes);//服务器时间
                 console.log("进入游戏");
-                GameStateManager.Instance.changeGameState(GameStateType.Home);
+                GameStateManager.getInstance.changeGameState(GameStateType.Home);
             }
                 break;
             case E_MESSAGE_CMD.ResCreateRoleMessage: {
                 let uid: Long = Long.readLong(bytes);
-                let randomName: string = bytes.readUTF();
-                PlayerData.Instance.randomName = randomName;
-                PlayerData.Instance.uid = uid;
-                GameStateManager.Instance.changeGameState(GameStateType.CreateRole);
+                PlayerData.getInstance.randomName = bytes.readUTF();
+                PlayerData.getInstance.uid = uid;
+                GameStateManager.getInstance.changeGameState(GameStateType.CreateRole);
             }
                 break;
             case E_MESSAGE_CMD.ResHeartMessage: {
-                let servertime: number = Long.readLong(bytes).toNumber();
-                let date: Date = new Date(servertime);
+                let serverTime: number = Long.readLong(bytes).toNumber();
+                let date: Date = new Date(serverTime);
                 console.log("当前服务器时间" + date.toUTCString());
 
             }
@@ -34,7 +33,7 @@ class MessageHandler implements IReceiveHandler {
     }
 
     public connected(): void {
-        GameStateManager.Instance.changeGameState(GameStateType.Login);
+        GameStateManager.getInstance.changeGameState(GameStateType.Login);
     }
 }
 

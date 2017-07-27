@@ -12,7 +12,7 @@ class HomeState implements IGameState {
 
 	enter():void{
 		console.log("进入Home界面");
-		UIManager.Instance.show(UIType.MainUI);
+		UIManager.getInstance.show(UIType.MainUI);
 	}
 
 	Update(fDeltaTime:number):GameStateType{
