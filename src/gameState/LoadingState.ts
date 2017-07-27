@@ -1,39 +1,41 @@
 class LoadingState implements IGameState {
-	public constructor() {
-	}
-	private _stateTo:GameStateType;
-	gameState():GameStateType{
-		return GameStateType.Loading;
-	}
+    public constructor() {
+    }
 
-	setStateTo(gsType:GameStateType):void{
-		this._stateTo = gsType;
-	}
+    private stateTo: GameStateType;
 
-	enter():void{
-		console.log("进入LoadingState");
+    gameState(): GameStateType {
+        return GameStateType.Loading;
+    }
 
-		 //初始化Resource资源加载库
+    setStateTo(gsType: GameStateType): void {
+        this.stateTo = gsType;
+    }
+
+    enter(): void {
+        console.log("进入LoadingState");
+
+        //初始化Resource资源加载库
         //initiate Resource loading library
         RES.addEventListener(RES.ResourceEvent.CONFIG_COMPLETE, this.onConfigComplete, this);
         RES.loadConfig("resource/default.res.json", "resource/");
-		UIManager.Instance.show(UIType.Loading);
-	}
+        UIManager.Instance.show(UIType.Loading);
+    }
 
-	Update(fDeltaTime:number):GameStateType{
-		return this._stateTo;
-	}
+    Update(fDeltaTime: number): GameStateType {
+        return this.stateTo;
+    }
 
-	updateTime(gameTime:GameTime){
+    updateTime(gameTime: GameTime) {
 
-	}
+    }
 
-	exit():void{
-		UIManager.Instance.hide(UIType.Loading);
-	}
+    exit(): void {
+        UIManager.Instance.hide(UIType.Loading);
+    }
 
 
-	/**
+    /**
      * 配置文件加载完成,开始预加载preload资源组。
      * configuration file loading is completed, start to pre-load the preload resource group
      */
@@ -41,8 +43,8 @@ class LoadingState implements IGameState {
         RES.removeEventListener(RES.ResourceEvent.CONFIG_COMPLETE, this.onConfigComplete, this);
         RES.addEventListener(RES.ResourceEvent.GROUP_COMPLETE, this.onResourceLoadComplete, this);
         RES.addEventListener(RES.ResourceEvent.GROUP_LOAD_ERROR, this.onResourceLoadError, this);
-        RES.addEventListener(RES.ResourceEvent.GROUP_PROGRESS, this.onResourceProgress, this);
-        RES.addEventListener(RES.ResourceEvent.ITEM_LOAD_ERROR, this.onItemLoadError, this);
+        RES.addEventListener(RES.ResourceEvent.GROUP_PROGRESS, LoadingState.onResourceProgress, this);
+        RES.addEventListener(RES.ResourceEvent.ITEM_LOAD_ERROR, LoadingState.onItemLoadError, this);
         RES.loadGroup("preload");
     }
 
@@ -52,15 +54,15 @@ class LoadingState implements IGameState {
      */
     private onResourceLoadComplete(event: RES.ResourceEvent) {
         if (event.groupName == "preload") {
-           
+
             RES.removeEventListener(RES.ResourceEvent.GROUP_COMPLETE, this.onResourceLoadComplete, this);
             RES.removeEventListener(RES.ResourceEvent.GROUP_LOAD_ERROR, this.onResourceLoadError, this);
-            RES.removeEventListener(RES.ResourceEvent.GROUP_PROGRESS, this.onResourceProgress, this);
-            RES.removeEventListener(RES.ResourceEvent.ITEM_LOAD_ERROR, this.onItemLoadError, this);
-			ConfigManager.Instance.initConfigs();
+            RES.removeEventListener(RES.ResourceEvent.GROUP_PROGRESS, LoadingState.onResourceProgress, this);
+            RES.removeEventListener(RES.ResourceEvent.ITEM_LOAD_ERROR, LoadingState.onItemLoadError, this);
+            // ConfigManager.Instance.initConfigs();
         }
         UIManager.addPackages();
-        NetManager.Instance.connect("192.168.1.186",9101);
+        NetManager.Instance.connect("192.168.1.165", 8001);
         MtwGame.addBg();
         (UIManager.Instance.getUI(UIType.Loading) as LoadingUICtrl).setText("正在连接服务器。。。");
     }
@@ -69,7 +71,7 @@ class LoadingState implements IGameState {
      * 资源组加载出错
      *  The resource group loading failed
      */
-    private onItemLoadError(event: RES.ResourceEvent) {
+    private static onItemLoadError(event: RES.ResourceEvent) {
         console.warn("Url:" + event.resItem.url + " has failed to load");
     }
 
@@ -89,10 +91,10 @@ class LoadingState implements IGameState {
      * preload资源组加载进度
      * Loading process of preload resource group
      */
-    private onResourceProgress(event: RES.ResourceEvent) {
+    private static onResourceProgress(event: RES.ResourceEvent) {
         if (event.groupName == "preload") {
-			let loadingui:LoadingUICtrl = <LoadingUICtrl>(UIManager.Instance.getUI(UIType.Loading));
-            loadingui.setProgress(event.itemsLoaded, event.itemsTotal);
+            let loadingUI: LoadingUICtrl = <LoadingUICtrl>(UIManager.Instance.getUI(UIType.Loading));
+            loadingUI.setProgress(event.itemsLoaded, event.itemsTotal);
         }
     }
 }

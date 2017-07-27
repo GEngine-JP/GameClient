@@ -7,6 +7,7 @@ class UIManager {
 
     public init(): void {
         this.views[UIType.Loading] = new LoadingUICtrl();
+        this.views[UIType.Login] = new LoginUICtrl()
 
     }
 
@@ -33,6 +34,16 @@ class UIManager {
         // fairygui.UIPackage.addPackage("MainUI");
         fairygui.UIConfig.defaultFont = "宋体";
         stage.addChild(fairygui.GRoot.inst.displayObject);
+    }
+
+
+    /**
+     * 获得ui
+     * @param {UIType} type
+     * @returns {IUIBase}
+     */
+    public getUI(type: UIType): IUIBase {
+        return this.views[type];
     }
 
 

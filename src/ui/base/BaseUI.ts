@@ -11,7 +11,7 @@ class BaseUI implements IUIBase {
     /**
      * ui组件
      */
-    private ui: fairygui.GComponent;
+    protected ui: fairygui.GComponent;
 
     /**
      * 是否被初始化

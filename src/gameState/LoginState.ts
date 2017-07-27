@@ -1,13 +1,13 @@
 class LoginState implements IGameState {
 	public constructor() {
 	}
-	private _stateTo:GameStateType;
+	private stateTo:GameStateType;
 	gameState():GameStateType{
 		return GameStateType.Login;
 	}
 
 	setStateTo(gsType:GameStateType):void{
-		this._stateTo = gsType;
+		this.stateTo = gsType;
 	}
 
 	enter():void{
@@ -16,7 +16,7 @@ class LoginState implements IGameState {
 	}
 
 	Update(fDeltaTime:number):GameStateType{
-		return this._stateTo;
+		return this.stateTo;
 	}
 
 	updateTime(gameTime:GameTime){

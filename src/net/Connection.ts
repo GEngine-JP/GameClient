@@ -1,96 +1,99 @@
 /**
- * 下面的示例使用 WebSocketExample 类创建新 WebSocket 对象，然后与服务器通讯。
+ *
+ * @author
+ *
  */
-class Connection extends egret.DisplayObjectContainer {
+class Connection {
+    /**网络套接字对象*/
+    private webSocket: egret.WebSocket;
+
+    /**是否已连接了服务器*/
+
+    private receivedHandler: IReceiveHandler;
 
     public constructor() {
-        super();
 
-        this.initStateText();
-        this.initWebSocket();
     }
 
-    private stateText: egret.TextField;
-    private text: string = "TestWebSocket";
 
-    private initStateText(): void {
-        this.stateText = new egret.TextField();
-        this.stateText.size = 22;
-        this.stateText.text = this.text;
-        this.stateText.width = 480;
-        this.addChild(this.stateText);
+    public setHandler(handler: IReceiveHandler): void {
+        this.receivedHandler = handler;
     }
 
-    private socket: egret.WebSocket;
+    /**
+     * 连接至服务器
+     * sc:地址
+     * d:端口
+     * */
+    public Connection(): void {
 
-    private initWebSocket(): void {
-        //创建 WebSocket 对象
-        this.socket = new egret.WebSocket();
-        //设置数据格式为二进制，默认为字符串
-        this.socket.type = egret.WebSocket.TYPE_BINARY;
-        //添加收到数据侦听，收到数据会调用此方法
-        this.socket.addEventListener(egret.ProgressEvent.SOCKET_DATA, this.onReceiveMessage, this);
-        //添加链接打开侦听，连接成功会调用此方法
-        this.socket.addEventListener(egret.Event.CONNECT, this.onSocketOpen, this);
-        //添加链接关闭侦听，手动关闭或者服务器关闭连接会调用此方法
-        this.socket.addEventListener(egret.Event.CLOSE, this.onSocketClose, this);
-        //添加异常侦听，出现异常会调用此方法
-        this.socket.addEventListener(egret.IOErrorEvent.IO_ERROR, this.onSocketError, this);
-        //连接服务器
-        this.socket.connect("localhost", 8001);
     }
 
-    private sendData(): void {
-        //创建 ByteArray 对象
+    public connect(host: string, port: number): void {
+        if (this.webSocket) {
+            if (this.webSocket.connected) {
+                //console.log("已有连接，勿重复");
+                return;
+            }
+        }
+        this.webSocket = new egret.WebSocket();
+        this.webSocket.addEventListener(egret.Event.CONNECT, this.onSocketOpen, this);
+        this.webSocket.addEventListener(egret.ProgressEvent.SOCKET_DATA, this.onReceiveMessage, this);
+        this.webSocket.connect(host, port);
+    }
 
-        var size: number = 0;
-        var content: egret.ByteArray = new egret.ByteArray();
-        // content.writeInt(1);
-        content.writeUTF("xiaomo");
-        // content.writeUTF("b");
+    public connected(): boolean {
+        return this.webSocket ? this.webSocket.connected : false;
+    }
 
-        if (content) {
-            content.position = 0;
-            size = content.length + 10;
+    /**跟 服务器连接成功后 执行的子程序*/
+    private onSocketOpen(e: egret.Event): void {
+        console.log("连接至服务器成功");
+        this.receivedHandler.connected();
+    }
+
+    /**收到 服务器发来数据 后 执行的子程序*/
+    private onReceiveMessage(e: egret.Event): void {
+        let byteArray: egret.ByteArray = new egret.ByteArray();
+        this.webSocket.readBytes(byteArray);
+        let size: number = byteArray.readInt() - 4;
+        let cmd: number = byteArray.readInt();
+        let msgid: number = byteArray.readShort();
+        this.receivedHandler.received(cmd, byteArray)
+    }
+
+    /**向 服务器 发送数据*/
+    public sendData(cmd: any, bytes: egret.ByteArray = null): void {
+        if (!this.webSocket.connected) {
+            return;
         }
 
-        var byte: egret.ByteArray = new egret.ByteArray();
-        byte.writeInt(size);
-        byte.writeInt(1007);
-        byte.writeShort(1);
-        byte.writeBytes(content);
+        let size: number = 10;
+        if (bytes != null) {
+            bytes.position = 0;
+            size += bytes.length;
+        }
 
-        //发送数据
-        this.socket.writeBytes(byte, 0, byte.length);
+        let buffer: egret.ByteArray = new egret.ByteArray();
+        buffer.writeInt(size);
+        buffer.writeInt(cmd);
+        buffer.writeShort(1);
+        if (bytes != null) {
+            buffer.writeBytes(bytes);
+        }
+
+
+        this.webSocket.type = egret.WebSocket.TYPE_BINARY;
+        this.webSocket.writeBytes(buffer);
+        this.webSocket.flush();
+
     }
 
-    private onSocketOpen(): void {
-        this.trace("WebSocketOpen");
-        this.sendData();
-    }
-
-    private onSocketClose(): void {
-        this.trace("WebSocketClose");
-    }
-
-    private onSocketError(): void {
-        this.trace("WebSocketError");
-    }
-
-    private onReceiveMessage(e: egret.Event): void {
-        //创建 ByteArray 对象
-        var byte: egret.ByteArray = new egret.ByteArray();
-        //读取数据
-        this.socket.readBytes(byte);
-        //读取字符串信息
-        var msg:number = byte.readUnsignedInt();
-        console.log(msg);
-    }
-
-
-    private trace(msg: any): void {
-        this.text = this.text + "\n" + msg;
-        this.stateText.text = this.text;
-        egret.log(msg);
+    /**调度事件 利用自定义事件类DateEvent.ts 在各类之间传递消息内容*/
+    private messageEvent(msg: string): void {
+        // var daterEvent:DateEvent = new DateEvent(DateEvent.DATE);
+        // daterEvent.testTxt = msg;
+        // this.dispatchEvent(daterEvent);
     }
 }
+

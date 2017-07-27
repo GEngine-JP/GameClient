@@ -1,7 +1,7 @@
 {
 	"groups": [
 		{
-			"keys": "bag,bag@atlas0,i0_png,i1_png,i2_png,i4_png,i3_png,i5_png,i6_png,i7_png,i8_png,i9_png",
+			"keys": "bag,bag@atlas0,i0_png,i1_png,i2_png,i4_png,i3_png,i5_png,i6_png,i7_png,i8_png,i9_png,Login_fui",
 			"name": "preload"
 		}
 	],
@@ -65,6 +65,11 @@
 			"url": "assets/i9.png",
 			"type": "image",
 			"name": "i9_png"
+		},
+		{
+			"url": "assets/Login.fui",
+			"type": "bin",
+			"name": "Login_fui"
 		}
 	]
 }
