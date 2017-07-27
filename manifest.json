@@ -13,15 +13,15 @@
 	],
 	"game": [
 		"bin-debug/data/element/BaseElement.js",
-		"bin-debug/data/element/GameElement.js",
+		"bin-debug/util/GameUtil.js",
 		"bin-debug/data/element/LevelRequireElement.js",
 		"bin-debug/data/GamaData.js",
 		"bin-debug/data/LevelRequire.js",
-		"bin-debug/LoadingUI.js",
+		"bin-debug/data/element/GameElement.js",
 		"bin-debug/Main.js",
 		"bin-debug/MainPanel.js",
 		"bin-debug/MyGLoader.js",
 		"bin-debug/net/Connection.js",
-		"bin-debug/util/GameUtil.js"
+		"bin-debug/LoadingUI.js"
 	]
 }

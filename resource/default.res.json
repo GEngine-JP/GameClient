@@ -1,20 +1,120 @@
 {
-	"resources": [
-		{
-			"name": "bag",
-			"type": "bin",
-			"url": "assets/bag.fui"
-		},
-		{
-			"name": "bag@atlas0",
-			"type": "image",
-			"url": "assets/bag@atlas0.png"
-		}
-	],
 	"groups": [
 		{
-			"name": "preload",
-			"keys": "bag,bag@atlas0"
+			"keys": "bag,bag@atlas0,i0_png,i1_png,i2_png,i4_png,i3_png,i5_png,i6_png,i7_png,i8_png,i9_png,virtuallist@atlas0_png,transition@lvxrs_mp3,transition@atlas0_png,modalwaiting@atlas0_png,extension@atlas0_png,looplist@atlas0_png,joystick@atlas0_png,basic@mejr82_mp3,basic@mejr81_mp3,basic@atlas0_png",
+			"name": "preload"
+		}
+	],
+	"resources": [
+		{
+			"url": "assets/bag.fui",
+			"type": "bin",
+			"name": "bag"
+		},
+		{
+			"url": "assets/bag@atlas0.png",
+			"type": "image",
+			"name": "bag@atlas0"
+		},
+		{
+			"url": "assets/i0.png",
+			"type": "image",
+			"name": "i0_png"
+		},
+		{
+			"url": "assets/i1.png",
+			"type": "image",
+			"name": "i1_png"
+		},
+		{
+			"url": "assets/i2.png",
+			"type": "image",
+			"name": "i2_png"
+		},
+		{
+			"url": "assets/i4.png",
+			"type": "image",
+			"name": "i4_png"
+		},
+		{
+			"url": "assets/i3.png",
+			"type": "image",
+			"name": "i3_png"
+		},
+		{
+			"url": "assets/i5.png",
+			"type": "image",
+			"name": "i5_png"
+		},
+		{
+			"url": "assets/i6.png",
+			"type": "image",
+			"name": "i6_png"
+		},
+		{
+			"url": "assets/i7.png",
+			"type": "image",
+			"name": "i7_png"
+		},
+		{
+			"url": "assets/i8.png",
+			"type": "image",
+			"name": "i8_png"
+		},
+		{
+			"url": "assets/i9.png",
+			"type": "image",
+			"name": "i9_png"
+		},
+		{
+			"name": "virtuallist@atlas0_png",
+			"type": "image",
+			"url": "assets/virtuallist@atlas0.png"
+		},
+		{
+			"name": "transition@lvxrs_mp3",
+			"type": "sound",
+			"url": "assets/transition@lvxrs.mp3"
+		},
+		{
+			"name": "transition@atlas0_png",
+			"type": "image",
+			"url": "assets/transition@atlas0.png"
+		},
+		{
+			"name": "modalwaiting@atlas0_png",
+			"type": "image",
+			"url": "assets/modalwaiting@atlas0.png"
+		},
+		{
+			"name": "extension@atlas0_png",
+			"type": "image",
+			"url": "assets/extension@atlas0.png"
+		},
+		{
+			"name": "looplist@atlas0_png",
+			"type": "image",
+			"url": "assets/looplist@atlas0.png"
+		},
+		{
+			"name": "joystick@atlas0_png",
+			"type": "image",
+			"url": "assets/joystick@atlas0.png"
+		},
+		{
+			"name": "basic@mejr82_mp3",
+			"type": "sound",
+			"url": "assets/basic@mejr82.mp3"
+		},
+		{
+			"name": "basic@mejr81_mp3",
+			"type": "sound",
+			"url": "assets/basic@mejr81.mp3"
+		},
+		{
+			"name": "basic@atlas0_png",
+			"type": "image",
+			"url": "assets/basic@atlas0.png"
 		}
 	]
 }
