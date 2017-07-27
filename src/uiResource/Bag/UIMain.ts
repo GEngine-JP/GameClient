@@ -6,7 +6,7 @@ module info.xiaomo.client.Bag {
 
 		public list:fairygui.GList;
 
-		public static URL:string = "ui://r5x6wd5vjh150";
+		public static URL:string = "gameUI://r5x6wd5vjh150";
 
 		public static createInstance():UIMain {
 			return <UIMain><any>(fairygui.UIPackage.createObject("Bag","Main"));

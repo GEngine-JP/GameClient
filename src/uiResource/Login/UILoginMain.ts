@@ -9,7 +9,7 @@ module Login {
 		public loginName:fairygui.GTextField;
 		public cancelButton:fairygui.GButton;
 
-		public static URL:string = "ui://ed3tkcfkg0gd0";
+		public static URL:string = "gameUI://ed3tkcfkg0gd0";
 
 		public static createInstance():UILoginMain {
 			return <UILoginMain><any>(fairygui.UIPackage.createObject("Login","LoginMain"));
