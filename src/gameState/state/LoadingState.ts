@@ -1,3 +1,6 @@
+/**
+ * loading状态
+ */
 class LoadingState implements IGameState {
     public constructor() {
     }
@@ -16,7 +19,6 @@ class LoadingState implements IGameState {
         console.log("进入LoadingState");
 
         //初始化Resource资源加载库
-        //initiate Resource loading library
         RES.addEventListener(RES.ResourceEvent.CONFIG_COMPLETE, this.onConfigComplete, this);
         RES.loadConfig("resource/default.res.json", "resource/");
         UIManager.getInstance.show(UIType.Loading);

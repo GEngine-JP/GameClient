@@ -1,11 +1,14 @@
-class CreateRoleState implements IGameState {
+/**
+ * 主界面
+ */
+class HomeState implements IGameState {
     public constructor() {
     }
 
     private _stateTo: GameStateType;
 
     gameState(): GameStateType {
-        return GameStateType.CreateRole;
+        return GameStateType.Home;
     }
 
     setStateTo(gsType: GameStateType): void {
@@ -13,8 +16,8 @@ class CreateRoleState implements IGameState {
     }
 
     enter(): void {
-        console.log("进入创角界面");
-        UIManager.getInstance.show(UIType.CreateRole);
+        console.log("进入Home界面");
+        UIManager.getInstance.show(UIType.MainUI);
     }
 
     Update(fDeltaTime: number): GameStateType {
@@ -26,6 +29,6 @@ class CreateRoleState implements IGameState {
     }
 
     exit(): void {
-        UIManager.getInstance.hide(UIType.CreateRole);
+
     }
 }
