@@ -2,12 +2,13 @@ class NetManager {
 
     public static readonly getInstance: NetManager = new NetManager();
     private connection: Connection = new Connection();
-
+    private handler:MessageHandler = new MessageHandler();
     public heart() {
 
     }
 
     public connect(address: string, port: number) {
+        this.connection.setHandler(this.handler);
         this.connection.connect(address, port);
     }
 

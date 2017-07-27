@@ -63,7 +63,7 @@ class LoadingState implements IGameState {
         }
         UIManager.addPackages();
         NetManager.getInstance.connect("192.168.1.165", 8001);
-        MtwGame.addBg();
+        // MtwGame.addBg();
         (UIManager.getInstance.getUI(UIType.Loading) as LoadingUICtrl).setText("正在连接服务器。。。");
     }
 
