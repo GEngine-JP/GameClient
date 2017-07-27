@@ -1,20 +1,44 @@
 class NetManager {
 
     public static readonly getInstance: NetManager = new NetManager();
+
+    /**
+     * socket连接
+     * @type {Connection}
+     */
     private connection: Connection = new Connection();
-    private handler:MessageHandler = new MessageHandler();
+
+    /**
+     * 消息处理器
+     * @type {MessageHandler}
+     */
+    private handler: MessageHandler = new MessageHandler();
+
+
+    /**
+     * 心跳
+     */
     public heart() {
 
     }
 
+    /**
+     * 联服务器
+     * @param {string} address
+     * @param {number} port
+     */
     public connect(address: string, port: number) {
         this.connection.setHandler(this.handler);
         this.connection.connect(address, port);
     }
 
-    public login(loginname: string): void {
+
+    /**
+     * 登录
+     * @param {string} loginName
+     */
+    public login(loginName: string): void {
         let output: egret.ByteArray = new egret.ByteArray();
-        let loginName: string = loginname;
         let sid = 1;
         let pid = 1;
         let client = 1;
@@ -30,6 +54,10 @@ class NetManager {
     }
 }
 
+
+/**
+ * 消息定义
+ */
 const enum E_MESSAGE_CMD {
     ReqLoginMessage = 1001,
     ResCreateRoleMessage = 1002,

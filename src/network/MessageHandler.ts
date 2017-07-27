@@ -2,6 +2,11 @@ class MessageHandler implements IReceiveHandler {
     public constructor() {
     }
 
+    /**
+     * 接受消息
+     * @param {number} cmd
+     * @param {egret.ByteArray} bytes
+     */
     public received(cmd: number, bytes: egret.ByteArray): void {
         switch (cmd) {
             case E_MESSAGE_CMD.ResEnterGameMessage: {
@@ -32,6 +37,9 @@ class MessageHandler implements IReceiveHandler {
         }
     }
 
+    /**
+     * 和服务端连接上之后跳到登录界面
+     */
     public connected(): void {
         GameStateManager.getInstance.changeGameState(GameStateType.Login);
     }
@@ -39,7 +47,17 @@ class MessageHandler implements IReceiveHandler {
 
 
 interface IReceiveHandler {
+
+    /**
+     * 接收消息
+     * @param {number} cmd
+     * @param {egret.ByteArray} bytes
+     */
     received(cmd: number, bytes: egret.ByteArray): void;
 
+
+    /**
+     * 连接之后操作
+     */
     connected(): void;
 }

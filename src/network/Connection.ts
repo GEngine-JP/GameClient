@@ -1,21 +1,28 @@
 /**
  *
- * @author
+ * @author xiaomo
  *
  */
 class Connection {
-    /**网络套接字对象*/
+
+    /**
+     * webSocket
+     */
     private webSocket: egret.WebSocket;
 
-    /**是否已连接了服务器*/
-
+    /**
+     * 消息通讯处理器
+     */
     private receivedHandler: IReceiveHandler;
 
     public constructor() {
 
     }
 
-
+    /**
+     * 设置消息处理器
+     * @param {IReceiveHandler} handler
+     */
     public setHandler(handler: IReceiveHandler): void {
         this.receivedHandler = handler;
     }
@@ -29,6 +36,11 @@ class Connection {
 
     }
 
+    /**
+     * 连接服务器
+     * @param {string} host
+     * @param {number} port
+     */
     public connect(host: string, port: number): void {
         if (this.webSocket) {
             if (this.webSocket.connected) {
@@ -42,6 +54,11 @@ class Connection {
         this.webSocket.connect(host, port);
     }
 
+
+    /**
+     * 是否连接成功
+     * @returns {boolean}
+     */
     public connected(): boolean {
         return this.webSocket ? this.webSocket.connected : false;
     }
@@ -91,9 +108,9 @@ class Connection {
 
     /**调度事件 利用自定义事件类DateEvent.ts 在各类之间传递消息内容*/
     private messageEvent(msg: string): void {
-        // var daterEvent:DateEvent = new DateEvent(DateEvent.DATE);
+        // var daterEvent: DateEvent = new DateEvent(DateEvent.DATE);
         // daterEvent.testTxt = msg;
-        // this.dispatchEvent(daterEvent);
+        // this.webSocket.dispatchEvent(daterEvent);
     }
 }
 
