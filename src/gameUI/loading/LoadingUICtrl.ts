@@ -11,12 +11,12 @@ class LoadingUICtrl extends BaseUI {
         console.log("打开loading界面");
         if (this.loadingView == null)
             this.loadingView = new LoadingUI();
-        MtwGame.Instance.stage.addChild(this.loadingView);
+        MtwGame.getInstance.stage.addChild(this.loadingView);
     }
 
     hide() {
         if (this.loadingView) {
-            MtwGame.Instance.stage.removeChild(this.loadingView);
+            MtwGame.getInstance.stage.removeChild(this.loadingView);
         }
     }
 

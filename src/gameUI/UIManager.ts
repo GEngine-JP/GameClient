@@ -42,7 +42,7 @@ class UIManager {
      * 加载fairyUI
      */
     public static addPackages() {
-        let stage: egret.Stage = MtwGame.Instance.stage;
+        let stage: egret.Stage = MtwGame.getInstance.stage;
         fairygui.UIPackage.addPackage("Login");
         // fairygui.UIPackage.addPackage("Loading");
         fairygui.UIConfig.defaultFont = "宋体";

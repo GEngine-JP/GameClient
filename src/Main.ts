@@ -11,7 +11,7 @@ class Main extends egret.DisplayObjectContainer {
     private onAddToStage(event: egret.Event) {
         //设置加载进度界面
         //Config to load process interface
-        MtwGame.Instance.init(this.stage);
+        MtwGame.getInstance.init(this.stage);
         this.gameTime = new GameTime();
         this.gameTime.totalGameTime = egret.getTimer();
         //this.addEventListener(egret.Event.ENTER_FRAME,this.enterFrameHandler,this);
@@ -25,7 +25,7 @@ class Main extends egret.DisplayObjectContainer {
         const time = this.gameTime.totalGameTime;
         this.gameTime.elapsedGameTime = now - time;
         this.gameTime.totalGameTime = now;
-        MtwGame.Instance.updateTime(this.gameTime);
+        MtwGame.getInstance.updateTime(this.gameTime);
         return false;
     }
 }

@@ -6,8 +6,8 @@ class LoginUICtrl extends BaseUI {
         console.log("打开登录界面");
         Login.LoginBinder.bindAll();
         this.ui = this.view = Login.UILoginMain.createInstance();
-        this.view.x = MtwGame.Instance.stage.stageWidth / 2 - this.view.width / 2;
-        this.view.y = MtwGame.Instance.stage.stageHeight - this.view.height - 50;
+        this.view.x = MtwGame.getInstance.stage.stageWidth / 2 - this.view.width / 2;
+        this.view.y = MtwGame.getInstance.stage.stageHeight - this.view.height - 50;
 
     }
 
