@@ -20,7 +20,7 @@ class LoginState implements IGameState {
         UIManager.getInstance.show(UIType.Login);
     }
 
-    Update(fDeltaTime: number): GameStateType {
+    update(fDeltaTime: number): GameStateType {
         return this.stateTo;
     }
 

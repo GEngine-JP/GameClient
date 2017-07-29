@@ -37,7 +37,7 @@ class CreateRoleState implements IGameState {
      * @returns {GameStateType}
      * @constructor
      */
-    Update(fDeltaTime: number): GameStateType {
+    update(fDeltaTime: number): GameStateType {
         return this.stateTo;
     }
 

@@ -42,7 +42,7 @@ class MtwGame {
      */
     public static addBg(): void {
         let stage: egret.Stage = MtwGame.getInstance.stage;
-        let sky = MtwGame.createBitmapByName("bg_jpg");
+        let sky = MtwGame.createBitmapByName("loadingBg_jpg");
         stage.addChildAt(sky, 0);
         let stageW = stage.stageWidth;
         let stageH = stage.stageHeight;

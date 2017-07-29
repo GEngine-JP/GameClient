@@ -1,7 +1,7 @@
 {
 	"groups": [
 		{
-			"keys": "Login_fui,Login@atlas0_png",
+			"keys": "Login_fui,Login@atlas0_png,loadingBg_jpg,loadingBg2_jpg",
 			"name": "preload"
 		}
 	],
@@ -15,6 +15,11 @@
 			"url": "assets/Login@atlas0.png",
 			"type": "image",
 			"name": "Login@atlas0_png"
+		},
+		{
+			"url": "assets/loadingBg.jpg",
+			"type": "image",
+			"name": "loadingBg_jpg"
 		}
 	]
 }

@@ -20,7 +20,7 @@ class HomeState implements IGameState {
         UIManager.getInstance.show(UIType.MainUI);
     }
 
-    Update(fDeltaTime: number): GameStateType {
+    update(fDeltaTime: number): GameStateType {
         return this._stateTo;
     }
 

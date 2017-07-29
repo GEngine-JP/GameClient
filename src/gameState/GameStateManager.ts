@@ -93,7 +93,7 @@ class GameStateManager {
     public update(fDeltaTime: number): void {
         let nextStateType: GameStateType = GameStateType.Continue;
         if (this.currentState != null) {
-            nextStateType = this.currentState.Update(fDeltaTime);
+            nextStateType = this.currentState.update(fDeltaTime);
         }
 
         if (nextStateType > GameStateType.Continue) {
@@ -137,7 +137,7 @@ interface IGameState {
      * @returns {GameStateType}
      * @constructor
      */
-    Update(fDeltaTime: number): GameStateType;
+    update(fDeltaTime: number): GameStateType;
 
     /**
      * 更新

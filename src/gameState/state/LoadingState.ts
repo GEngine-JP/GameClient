@@ -42,7 +42,7 @@ class LoadingState implements IGameState {
      * @returns {GameStateType}
      * @constructor
      */
-    Update(fDeltaTime: number): GameStateType {
+    update(fDeltaTime: number): GameStateType {
         return this.currentState;
     }
 
@@ -100,7 +100,7 @@ class LoadingState implements IGameState {
         NetManager.getInstance.connect("192.168.1.165", 8001);
 
         // 设置背景
-        // MtwGame.addBg();
+        MtwGame.addBg();
 
         // 设置loading初始进度
         (UIManager.getInstance.getUI(UIType.Loading) as LoadingUICtrl).setProgress(event.itemsLoaded, event.itemsTotal);
