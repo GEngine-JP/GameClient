@@ -21,20 +21,30 @@ class GameStateManager {
      * 初始化游戏状态
      */
     public init(): void {
+        this.addGameState();
+        // 初始化为loading状态
+        this.changeGameState(GameStateType.Loading);
+    }
+
+    /**
+     * 添加游戏状态
+     */
+    public addGameState() {
+        // 添加登录状态
         let gameState: IGameState = new LoginState();
         this.gameStates[GameStateType.Login] = gameState;
 
+        // 添加loading状态
         gameState = new LoadingState();
         this.gameStates[GameStateType.Loading] = gameState;
 
+        // 添加创角状态
         gameState = new CreateRoleState();
         this.gameStates[GameStateType.CreateRole] = gameState;
 
+        // 添加主界面状态
         gameState = new HomeState();
         this.gameStates[GameStateType.Home] = gameState;
-
-        // 初始化为loading状态
-        this.changeGameState(GameStateType.Loading);
     }
 
 

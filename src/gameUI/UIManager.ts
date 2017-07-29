@@ -10,7 +10,9 @@ class UIManager {
      * 初始化UI控制器
      */
     public init(): void {
+        // 添加loadingUI控制器
         this.views[UIType.Loading] = new LoadingUICtrl();
+        // 添加登录UI控制器
         this.views[UIType.Login] = new LoginUICtrl()
     }
 
