@@ -51,9 +51,13 @@ class Connection {
         this.webSocket = new egret.WebSocket();
         this.webSocket.addEventListener(egret.Event.CONNECT, this.onSocketOpen, this);
         this.webSocket.addEventListener(egret.ProgressEvent.SOCKET_DATA, this.onReceiveMessage, this);
+        this.webSocket.addEventListener(egret.IOErrorEvent.IO_ERROR, this.ioErrorHandler, this)
         this.webSocket.connect(host, port);
     }
 
+    private ioErrorHandler(ignored: egret.IOErrorEvent): void {
+        console.log("连接服务器失败");
+    }
 
     /**
      * 是否连接成功
@@ -64,13 +68,13 @@ class Connection {
     }
 
     /**跟 服务器连接成功后 执行的子程序*/
-    private onSocketOpen(e: egret.Event): void {
+    private onSocketOpen(ignored: egret.Event): void {
         console.log("连接至服务器成功");
         this.receivedHandler.connected();
     }
 
     /**收到 服务器发来数据 后 执行的子程序*/
-    private onReceiveMessage(e: egret.Event): void {
+    private onReceiveMessage(ignored: egret.Event): void {
         let byteArray: egret.ByteArray = new egret.ByteArray();
         this.webSocket.readBytes(byteArray);
         let size: number = byteArray.readInt() - 4;

@@ -6,8 +6,8 @@ class LoginUICtrl extends BaseUI {
         console.log("打开登录界面");
         Login.LoginBinder.bindAll();
         this.ui = this.view = Login.UILoginMain.createInstance();
-        this.view.x = MtwGame.getInstance.stage.stageWidth / 2 - this.view.width / 2;
-        this.view.y = MtwGame.getInstance.stage.stageHeight - this.view.height - 50;
+        // this.view.x = MtwGame.getInstance.stage.stageWidth / 2 - this.view.width / 2;
+        // this.view.y = MtwGame.getInstance.stage.stageHeight - this.view.height - 50;
 
     }
 
@@ -18,19 +18,19 @@ class LoginUICtrl extends BaseUI {
         this.view.loginName.requestFocus();
     }
 
-    private inputFocusInHandler(e: egret.FocusEvent): void {
+    private inputFocusInHandler(ignored: egret.FocusEvent): void {
         if (this.view.loginName.text == "请输入账号") {
             this.view.loginName.text = "";
         }
     }
 
-    private inputFocusOutHandler(e: egret.FocusEvent): void {
+    private inputFocusOutHandler(ignored: egret.FocusEvent): void {
         if (this.view.loginName.text == "") {
             this.view.loginName.text = "请输入账号";
         }
     }
 
-    private submitHandler(e: egret.TouchEvent): void {
+    private submitHandler(ignored: egret.TouchEvent): void {
         console.log("登录游戏");
         NetManager.getInstance.login(this.view.loginName.text);
     }

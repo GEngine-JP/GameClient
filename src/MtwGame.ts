@@ -15,11 +15,11 @@ class MtwGame {
     public init(stage: egret.Stage): void {
         this.stage = stage;
 
-        // 初始化游戏状态
-        GameStateManager.getInstance.init();
-
         // 初始化UI
         UIManager.getInstance.init();
+
+        // 初始化游戏状态
+        GameStateManager.getInstance.init();
 
 
     }
