@@ -1,85 +1,20 @@
 {
 	"groups": [
 		{
-			"keys": "bag,bag@atlas0,i0_png,i1_png,i2_png,i4_png,i3_png,i5_png,i6_png,i7_png,i8_png,i9_png,Login_fui,bg_jpg,Login@atlas0_png",
+			"keys": "Login_fui,Login@atlas0_png",
 			"name": "preload"
 		}
 	],
 	"resources": [
-		{
-			"url": "assets/bag.fui",
-			"type": "bin",
-			"name": "bag"
-		},
-		{
-			"url": "assets/bag@atlas0.png",
-			"type": "image",
-			"name": "bag@atlas0"
-		},
-		{
-			"url": "assets/i0.png",
-			"type": "image",
-			"name": "i0_png"
-		},
-		{
-			"url": "assets/i1.png",
-			"type": "image",
-			"name": "i1_png"
-		},
-		{
-			"url": "assets/i2.png",
-			"type": "image",
-			"name": "i2_png"
-		},
-		{
-			"url": "assets/i4.png",
-			"type": "image",
-			"name": "i4_png"
-		},
-		{
-			"url": "assets/i3.png",
-			"type": "image",
-			"name": "i3_png"
-		},
-		{
-			"url": "assets/i5.png",
-			"type": "image",
-			"name": "i5_png"
-		},
-		{
-			"url": "assets/i6.png",
-			"type": "image",
-			"name": "i6_png"
-		},
-		{
-			"url": "assets/i7.png",
-			"type": "image",
-			"name": "i7_png"
-		},
-		{
-			"url": "assets/i8.png",
-			"type": "image",
-			"name": "i8_png"
-		},
-		{
-			"url": "assets/i9.png",
-			"type": "image",
-			"name": "i9_png"
-		},
 		{
 			"url": "assets/Login.fui",
 			"type": "bin",
 			"name": "Login_fui"
 		},
 		{
-			"url": "assets/bg.jpg",
+			"url": "assets/Login@atlas0.png",
 			"type": "image",
-			"name": "bg_jpg"
-		},
-		{
-			"name": "Login@atlas0_png",
-			"type": "image",
-			"url": "assets/Login@atlas0.png"
+			"name": "Login@atlas0_png"
 		}
 	]
 }

@@ -103,7 +103,7 @@ class LoadingState implements IGameState {
         // MtwGame.addBg();
 
         // 设置loading初始进度
-        (UIManager.getInstance.getUI(UIType.Loading) as LoadingUICtrl).setProgress(1, 100);
+        (UIManager.getInstance.getUI(UIType.Loading) as LoadingUICtrl).setProgress(event.itemsLoaded, event.itemsTotal);
     }
 
     /**
