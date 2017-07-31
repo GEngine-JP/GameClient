@@ -44,7 +44,6 @@ class Connection {
     public connect(host: string, port: number): void {
         if (this.webSocket) {
             if (this.webSocket.connected) {
-                //console.log("已有连接，勿重复");
                 return;
             }
         }

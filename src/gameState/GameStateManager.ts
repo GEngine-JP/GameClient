@@ -1,3 +1,6 @@
+/**
+ * 游戏状态管理器
+ */
 class GameStateManager {
 
     public static readonly getInstance: GameStateManager = new GameStateManager();

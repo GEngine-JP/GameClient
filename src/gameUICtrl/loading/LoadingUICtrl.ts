@@ -1,3 +1,5 @@
+import BasicBinder = Basic.BasicBinder;
+
 class LoadingUICtrl extends BaseUI {
 
     /**
@@ -14,6 +16,7 @@ class LoadingUICtrl extends BaseUI {
         console.log("打开loading界面");
         if (this.loadingView == null)
             this.loadingView = new LoadingUI();
+        BasicBinder.bindAll();
         MtwGame.getInstance.stage.addChild(this.loadingView);
     }
 

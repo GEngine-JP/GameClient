@@ -5,6 +5,9 @@ class LoadingState implements IGameState {
     public constructor() {
     }
 
+    /**
+     * 当前游戏状态
+     */
     private currentState: GameStateType;
 
     /**
@@ -97,7 +100,7 @@ class LoadingState implements IGameState {
         UIManager.addPackages();
 
         // 连接服务器
-        NetManager.getInstance.connect("192.168.1.165", 8001);
+        NetManager.getInstance.connect(GameConfig.ip, GameConfig.port);
 
         // 设置背景
         MtwGame.addBg();
