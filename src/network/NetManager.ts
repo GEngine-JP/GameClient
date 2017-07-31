@@ -39,17 +39,17 @@ class NetManager {
      */
     public login(loginName: string): void {
         let output: egret.ByteArray = new egret.ByteArray();
-        let sid = 1;
-        let pid = 1;
-        let client = 1;
-        let IDNumber: string = "123";
-        let ip: string = "0.0.0.0";
+        // let sid = 1;
+        // let pid = 1;
+        // let client = 1;
+        // let IDNumber: string = "123";
+        // let ip: string = "0.0.0.0";
         output.writeUTF(loginName);
-        output.writeInt(sid);
-        output.writeInt(pid);
-        output.writeInt(client);
-        output.writeUTF(IDNumber);
-        output.writeUTF(ip);
+        // output.writeInt(sid);
+        // output.writeInt(pid);
+        // output.writeInt(client);
+        // output.writeUTF(IDNumber);
+        // output.writeUTF(ip);
         this.connection.sendData(E_MESSAGE_CMD.ReqLoginMessage, output);
     }
 }
@@ -59,7 +59,8 @@ class NetManager {
  * 消息定义
  */
 const enum E_MESSAGE_CMD {
-    ReqLoginMessage = 1001,
+    ReqLoginMessage = 1007,
+    ResLoginMessage = 1008,
     ResCreateRoleMessage = 1002,
     ReqCreateRoleMessage = 1003,
     ResEnterGameMessage = 1006,

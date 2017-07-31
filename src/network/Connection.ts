@@ -80,7 +80,7 @@ class Connection {
         this.webSocket.readBytes(byteArray);
         let size: number = byteArray.readInt() - 4;
         let cmd: number = byteArray.readInt();
-        let msgid: number = byteArray.readShort();
+        console.log(`收到消息${cmd}`);
         this.receivedHandler.received(cmd, byteArray)
     }
 

@@ -19,6 +19,18 @@ class MessageHandler implements IReceiveHandler {
                 console.log("进入游戏");
                 GameStateManager.getInstance.changeGameState(GameStateType.Home);
             }
+            break
+               case E_MESSAGE_CMD.ResLoginMessage: {
+                let uid: Long = Long.readLong(bytes);//玩家id
+                console.log(uid);
+                // let mapId: number = bytes.readInt();//地图ID
+                // let line = bytes.readInt();//分线
+                // let x = bytes.readInt();//y
+                // let y = bytes.readInt();//x
+                // let serverTime = Long.readLong(bytes);//服务器时间
+                console.log("进入游戏");
+                GameStateManager.getInstance.changeGameState(GameStateType.Home);
+            }
                 break;
             case E_MESSAGE_CMD.ResCreateRoleMessage: {
                 let uid: Long = Long.readLong(bytes);
