@@ -1,7 +1,7 @@
 {
 	"groups": [
 		{
-			"keys": "Login_fui,Login@atlas0_png,loadingBg_jpg,loadingBg2_jpg",
+			"keys": "Login_fui,Login@atlas0_png,loadingBg_jpg",
 			"name": "preload"
 		}
 	],
