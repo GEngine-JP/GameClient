@@ -37,4 +37,10 @@ class GameUtil extends egret.EventDispatcher {
     }
 
 
+
+    public static alert(content:string){
+        console.log(`${content}`);
+    }
+
+
 }

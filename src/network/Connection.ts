@@ -48,9 +48,23 @@ class Connection {
             }
         }
         this.webSocket = new egret.WebSocket();
+
+        //设置数据格式为二进制，默认为字符串
+        this.webSocket.type = egret.WebSocket.TYPE_BINARY;
+
+        //添加链接打开侦听，连接成功会调用此方法
         this.webSocket.addEventListener(egret.Event.CONNECT, this.onSocketOpen, this);
+
+        //添加收到数据侦听，收到数据会调用此方法
         this.webSocket.addEventListener(egret.ProgressEvent.SOCKET_DATA, this.onReceiveMessage, this);
+
+        //添加异常侦听，出现异常会调用此方法
         this.webSocket.addEventListener(egret.IOErrorEvent.IO_ERROR, this.ioErrorHandler, this);
+
+        //添加链接关闭侦听，手动关闭或者服务器关闭连接会调用此方法
+        this.webSocket.addEventListener(egret.Event.CLOSE, this.onSocketClose, this);
+
+        //连接服务器
         this.webSocket.connect(host, port);
     }
 
@@ -104,11 +118,14 @@ class Connection {
             buffer.writeBytes(bytes);
         }
 
-
-        this.webSocket.type = egret.WebSocket.TYPE_BINARY;
         this.webSocket.writeBytes(buffer);
         this.webSocket.flush();
 
+    }
+
+
+    onSocketClose() {
+        GameUtil.alert("服务器连接断开。。。");
     }
 
     /**调度事件 利用自定义事件类DateEvent.ts 在各类之间传递消息内容*/
