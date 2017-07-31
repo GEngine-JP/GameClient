@@ -1,7 +1,7 @@
 {
 	"groups": [
 		{
-			"keys": "Login_fui,Login@atlas0_png,loadingBg_jpg",
+			"keys": "Login_fui,Login@atlas0_png,loadingBg_jpg,Basic@atlas0_png,Basic@mejr81_mp3,Basic@mejr82_mp3,Basic_fui",
 			"name": "preload"
 		}
 	],
@@ -20,6 +20,26 @@
 			"url": "assets/loadingBg.jpg",
 			"type": "image",
 			"name": "loadingBg_jpg"
+		},
+		{
+			"url": "assets/Basic@atlas0.png",
+			"type": "image",
+			"name": "Basic@atlas0_png"
+		},
+		{
+			"url": "assets/Basic@mejr81.mp3",
+			"type": "sound",
+			"name": "Basic@mejr81_mp3"
+		},
+		{
+			"url": "assets/Basic@mejr82.mp3",
+			"type": "sound",
+			"name": "Basic@mejr82_mp3"
+		},
+		{
+			"url": "assets/Basic.fui",
+			"type": "bin",
+			"name": "Basic_fui"
 		}
 	]
 }

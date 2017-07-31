@@ -13,9 +13,9 @@
 	],
 	"game": [
 		"bin-debug/network/MessageHandler.js",
-		"bin-debug/uiResource/Basic/BasicBinder.js",
 		"bin-debug/gameUICtrl/BaseUI.js",
 		"bin-debug/network/Connection.js",
+		"bin-debug/uiResource/Basic/BasicBinder.js",
 		"bin-debug/gameState/state/CreateRoleState.js",
 		"bin-debug/gameState/state/HomeState.js",
 		"bin-debug/gameState/state/LoadingState.js",
