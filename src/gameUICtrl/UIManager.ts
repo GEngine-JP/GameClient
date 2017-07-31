@@ -46,7 +46,7 @@ class UIManager {
     public static addPackages() {
         let stage: egret.Stage = MtwGame.getInstance.stage;
         fairygui.UIPackage.addPackage("Login");
-        // fairygui.UIPackage.addPackage("Basic");
+        fairygui.UIPackage.addPackage("Basic");
         fairygui.UIConfig.defaultFont = "宋体";
         stage.addChild(fairygui.GRoot.inst.displayObject);
     }
