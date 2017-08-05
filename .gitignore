@@ -18,3 +18,4 @@ app/ts/components/*.map
 bin-debug
 manifest.json
 Library
+Temp
