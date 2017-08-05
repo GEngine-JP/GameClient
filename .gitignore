@@ -17,3 +17,4 @@ app/ts/components/*.map
 *.js
 bin-debug
 manifest.json
+Library
