@@ -6,8 +6,10 @@
 [![GitHub license](https://img.shields.io/badge/license-Apache%202-blue.svg)](https://raw.githubusercontent.com/ChessGame/GameClient/master/LICENSE)
 [![Maven Central](https://img.shields.io/maven-central/v/org.apache.maven/apache-maven.svg)]()
 [![GitHub followers](https://img.shields.io/github/followers/xiaomoinfo.svg?style=social&label=Follow)]()
-[![GitHub watchers](https://img.shields.io/github/watchers/ChessGame/GameClient.svg?style=social&label=Watch)]()
-##Autoface and xlua 前端架构
+[![GitHub watchers](https://img.shields.io/github/watchers/ChessGame/GameClient.svg?style=social&label=Watch)]()  
+
+
+## Autoface and xlua 前端架构
 
 版本需求unity5.4.4f2
 
