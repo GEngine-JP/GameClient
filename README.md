@@ -1,3 +1,12 @@
+
+[![Build Status](https://travis-ci.org/ChessGame/GameClient.svg?branch=master)](https://travis-ci.org/ChessGame/GameClient)
+[![GitHub issues](https://img.shields.io/github/issues/ChessGame/GameClient.svg)](https://github.com/ChessGame/GameClient/issues)
+[![GitHub forks](https://img.shields.io/github/forks/ChessGame/GameClient.svg)](https://github.com/ChessGame/GameClient/network)
+[![GitHub stars](https://img.shields.io/github/stars/ChessGame/GameClient.svg)](https://github.com/ChessGame/GameClient/stargazers)
+[![GitHub license](https://img.shields.io/badge/license-Apache%202-blue.svg)](https://raw.githubusercontent.com/ChessGame/GameClient/master/LICENSE)
+[![Maven Central](https://img.shields.io/maven-central/v/org.apache.maven/apache-maven.svg)]()
+[![GitHub followers](https://img.shields.io/github/followers/xiaomoinfo.svg?style=social&label=Follow)]()
+[![GitHub watchers](https://img.shields.io/github/watchers/ChessGame/GameClient.svg?style=social&label=Watch)]()
 ##Autoface and xlua 前端架构
 
 版本需求unity5.4.4f2
