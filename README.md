@@ -8,7 +8,16 @@
 [![GitHub followers](https://img.shields.io/github/followers/xiaomoinfo.svg?style=social&label=Follow)]()
 [![GitHub watchers](https://img.shields.io/github/watchers/ChessGame/GameClient.svg?style=social&label=Watch)]()  
 
-![大厅](https://raw.githubusercontent.com/ChessGame/GameClient/master/screenshot/lobby.png)
+![输入图片说明](https://git.oschina.net/uploads/images/2017/0719/192826_1d6f397f_1387891.png "屏幕截图.png")
+![输入图片说明](https://git.oschina.net/uploads/images/2017/0709/131509_9a969010_1387891.jpeg "在这里输入图片标题")
+![输入图片说明](https://git.oschina.net/uploads/images/2017/0719/192845_5526c6bf_1387891.png "屏幕截图.png")
+![输入图片说明](https://git.oschina.net/uploads/images/2017/0719/192900_a0dee563_1387891.png "屏幕截图.png")
+![输入图片说明](https://git.oschina.net/uploads/images/2017/0719/192913_d65bc3cd_1387891.png "屏幕截图.png")
+![输入图片说明](https://git.oschina.net/uploads/images/2017/0719/192926_298b49ff_1387891.png "屏幕截图.png")
+![输入图片说明](https://git.oschina.net/uploads/images/2017/0719/192938_28a2548f_1387891.png "屏幕截图.png")
+![输入图片说明](https://git.oschina.net/uploads/images/2017/0719/192954_eeba8b49_1387891.png "屏幕截图.png")
+![输入图片说明](https://git.oschina.net/uploads/images/2017/0719/193004_066f1ad5_1387891.png "屏幕截图.png")
+![输入图片说明](https://git.oschina.net/uploads/images/2017/0709/131509_9a969010_1387891.jpeg "在这里输入图片标题")
 
 ## Autoface and xlua 前端架构
 
