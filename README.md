@@ -35,3 +35,12 @@
 ![输入图片说明](https://git.oschina.net/uploads/images/2017/0719/193004_066f1ad5_1387891.png "屏幕截图.png")
 ![输入图片说明](https://git.oschina.net/uploads/images/2017/0709/131509_9a969010_1387891.jpeg "在这里输入图片标题")
 
+##
+
+##-2017.8.11
+版本更新接入android
+
+
+- 接入android与unity之间的通信
+- 添加unity打包工具
+- 添加unity与android之间的通信测试工程 
