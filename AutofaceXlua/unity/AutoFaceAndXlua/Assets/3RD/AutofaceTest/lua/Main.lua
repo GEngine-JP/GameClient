@@ -1,0 +1,1 @@
+require "test.lua"function start()	print("lua start...")endfunction update()	print("lua update...")endfunction ondestroy()    print("lua destroy")endfunction Testfunc()    print("lua do something...")	DoSomething();end

@@ -44,3 +44,6 @@
 - 接入android与unity之间的通信
 - 添加unity打包工具
 - 添加unity与android之间的通信测试工程 
+
+##-2017.8.14
+版本更新android理顺
