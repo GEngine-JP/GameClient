@@ -10,12 +10,12 @@
  *************************************************************************************/
 using UnityEngine;
 using System.Collections;
-
+using Code.Core;
 public class GameManager : MonoBehaviour {
 
     void Awake()
     {
-
+        AppBootStrap.getInstance().Injection();
     }
 
     // Use this for initialization
