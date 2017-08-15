@@ -13,6 +13,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Autofac;
+using Code.AdroidApi;
+
 public class Bootstrap:MonoBehaviour
 {
     public Button Btn_1;
@@ -39,19 +41,19 @@ public class Bootstrap:MonoBehaviour
     {
         int a = UnityEngine.Random.Range(1, 100);
         int b = UnityEngine.Random.Range(1, 100);
-        int c = AndroidApi.Instance.SDKCall<int>("add", a, b);
+        int c = AndroidApi.getInstance().SDKCall<int>("add", a, b);
         ShowText.text = a+"+"+b+" 呼叫Adroid返回的结果：" + c;
     }
 
     private void UnityCallAndroidToastMsg()
     {
-        AndroidApi.Instance.SDKCall("ShowToast", "安卓需要显示一下哟！！！");
+        AndroidApi.getInstance().SDKCall("ShowToast", "安卓需要显示一下哟！！！");
     }
 
     private void AndroidCallUnity()
     {
         /// android 方法， 挂有呼叫方法的对象名字，方法名字
-        AndroidApi.Instance.SDKCall("CallUnity", "Canvas", "ToLuaFunc");
+        AndroidApi.getInstance().SDKCall("CallUnity", "Canvas", "ToLuaFunc");
     }
 
     private int callnum = 0;
