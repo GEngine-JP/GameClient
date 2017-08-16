@@ -66,6 +66,7 @@ public class ExportToAndroid: EditorWindow
 
         //2.拷贝资源
         //todo 调用packager 代码拷贝
+        Packager.BuildAndroidResource();
 
         //3.放置资源到android 目录
         string outputDeviceDir = Path.Combine(OUTPUT_DIR, "UnityProject");

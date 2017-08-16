@@ -16,28 +16,31 @@ namespace Code.Core
 {
     public class SingletonMono<T> : MonoBehaviour where T : MonoBehaviour
     {
-        private static T instance;
-
+        private static T _instance;
+        private static readonly object syslock = new object();
         /**
       Returns the instance of this singleton.
    */
 
-        public static T GetInstance
+        public static T getInstance()
         {
-            get
+            if (_instance == null)
             {
-                if (instance == null)
+                lock (syslock)
                 {
-
-                    instance = (T) FindObjectOfType(typeof (T));
-                    if (instance == null)
+                    if (_instance == null)
                     {
-                        Debug.LogError("An instance of " + typeof (T) +
-                                       " is needed in the scene, but there is none.");
+                        GameObject a = new GameObject(typeof(T).ToString());
+                        _instance = a.AddComponent<T>();
                     }
+                    return _instance;
                 }
-                return instance;
             }
+            else
+            {
+                return _instance;
+            }
+
         }
     }
 }

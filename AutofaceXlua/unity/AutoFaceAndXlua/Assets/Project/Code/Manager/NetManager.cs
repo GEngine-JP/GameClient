@@ -9,13 +9,61 @@
 **修 改 人： 
  *************************************************************************************/
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using UnityEngine;
+using Code.Core;
+using LHNetwork;
+using DG.Tweening;
 
-namespace Assets.Project.Code.Manager
+namespace WorthGod
 {
-    class NetManager
+    class NetManager:SingletonMono<NetManager>
     {
+        public IClient Client
+        {
+            get { return InjectionEnter.getInstance().Get<IClient>(); }
+        }
+
+        void Awake()
+        {
+            Application.runInBackground = true;
+            DontDestroyOnLoad(this);
+            Client.RegistSever(AppConst.SocketAddress, AppConst.SocketPort);
+            Client.ConnetFinish += OnConnectCallBack;
+            Client.ConnetFail += OnCloseConnectCallBack;
+        }
+
+        void Start()
+        {
+            //1.启动连接
+            Client.BegainConnect();
+            //2.1秒未连接，则启动转圈UI逻辑
+            DOVirtual.DelayedCall(1.0f, () =>
+            {
+                if (!Client.IsOnline())//未连接上网络
+                {
+                    //todo 出全屏转圈特效
+                }
+            });
+        }
+
+
+        /// <summary>
+        /// 断开连接时的回调
+        /// </summary>
+        public void OnCloseConnectCallBack()
+        {
+
+        }
+
+
+        /// <summary>
+        /// 连接上的回调
+        /// </summary>
+        public void OnConnectCallBack()
+        {
+
+        }
+
+
     }
 }

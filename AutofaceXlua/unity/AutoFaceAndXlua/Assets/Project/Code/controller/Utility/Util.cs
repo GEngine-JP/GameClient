@@ -524,20 +524,6 @@ namespace WorthGod
             luaPaths.Remove(path);
         }
 
-        public static void Log(string str)
-        {
-            Debug.Log(str);
-        }
-
-        public static void LogWarning(string str)
-        {
-            Debug.LogWarning(str);
-        }
-
-        public static void LogError(string str)
-        {
-            Debug.LogError(str);
-        }
 
         /// <summary>
         /// 防止初学者不按步骤来操作
