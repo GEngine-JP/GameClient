@@ -195,7 +195,7 @@ public class Packager
         info.WindowStyle = ProcessWindowStyle.Hidden;
         info.UseShellExecute = isWin;
         info.ErrorDialog = true;
-        Util.Log(info.FileName + " " + info.Arguments);
+        UnityEngine.Debug.Log(info.FileName + " " + info.Arguments);
 
         Process pro = Process.Start(info);
         pro.WaitForExit();

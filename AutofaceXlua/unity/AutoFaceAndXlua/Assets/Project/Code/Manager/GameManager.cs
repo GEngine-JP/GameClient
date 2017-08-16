@@ -11,20 +11,29 @@
 using UnityEngine;
 using System.Collections;
 using Code.Core;
-public class GameManager : MonoBehaviour {
 
-    void Awake()
+namespace WorthGod
+{
+    public class GameManager : SingletonMono<GameManager>
     {
-        AppBootStrap.getInstance().Injection();
-    }
+        /// <summary>
+        /// 初始化游戏管理器
+        /// </summary>
+        void Awake()
+        {
+            Init();
+        }
 
-    // Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+        /// <summary>
+        /// 初始化
+        /// </summary>
+        void Init()
+        {
+            DontDestroyOnLoad(gameObject);  //防止销毁自己
+
+           // CheckExtractResource(); //释放资源
+            Screen.sleepTimeout = SleepTimeout.NeverSleep;
+            Application.targetFrameRate = AppConst.GameFrameRate;
+        }
+    }
 }

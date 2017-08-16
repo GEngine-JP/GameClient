@@ -1,9 +1,9 @@
 ﻿/************************************************************************************* 
-**文 件 名：AppBootStrap 
-**创建时间：2017/8/15 星期二 下午 3:14:01 
+**文 件 名：InjectionEnter 
+**创建时间：2017/8/16 星期三 下午 12:00:53 
 **作    者：罗弘(email： 243515320@qq.com)
 **工    号：102193
-**说    明：依赖注入接口，表示该接口的实现类将自动注册到IoC容器中
+**说    明：依赖注入的管理器 
 **版    本：V1.0.0  
 **修改时间： 
 **修 改 人： 
@@ -15,7 +15,7 @@ using Autofac;
 
 namespace Code.Core
 {
-    public class AppBootStrap : Singleton<AppBootStrap>
+    public class InjectionEnter : Singleton<InjectionEnter>
     {
         public ContainerBuilder Builder;
         IContainer _container;
