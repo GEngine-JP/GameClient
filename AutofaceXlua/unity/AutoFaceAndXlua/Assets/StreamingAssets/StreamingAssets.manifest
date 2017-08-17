@@ -1,0 +1,7 @@
+ManifestFileVersion: 0
+CRC: 3810228587
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: build/prefab/waitanimation.unity3d
+      Dependencies: {}

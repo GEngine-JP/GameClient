@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Net.Sockets;
 using System.Net;
+using Code.AdroidApi;
 
 namespace LHNetwork
 {
@@ -53,6 +54,7 @@ namespace LHNetwork
         {
             try
             {
+                AndroidApi.getInstance().SDKCall("ShowToast", "客户端正在尝试连接服务器哟！！！IP "+ IP+"  端口 "+ Port);
                 AsynConnect(IP, Port);
                 return true;
             }
