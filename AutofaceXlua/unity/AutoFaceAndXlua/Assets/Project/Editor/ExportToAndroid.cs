@@ -195,7 +195,7 @@ public class ExportToAndroid: EditorWindow
 
     #region 自动命名assetbundle
 
-    public static string sourcePath = Application.dataPath + "/Project/Prefab";
+    public static string sourcePath = Application.dataPath + "/Project/Build/Prefab";
     const string AssetBundlesOutputPath = "Assets/StreamingAssets";
     /// <summary>  
     /// 清除之前设置过的AssetBundleName，避免产生不必要的资源也打包  
