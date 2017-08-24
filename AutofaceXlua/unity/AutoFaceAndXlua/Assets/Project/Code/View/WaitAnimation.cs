@@ -17,7 +17,7 @@ using DG.Tweening;
 public class WaitAnimation:MonoBehaviour
 {
     public List<Texture2D> SourceImage = new List<Texture2D>();
-    private float _speed = 0.04f;
+    private const float _speed = 0.04f;
     private float _targetTime = 0;
     private bool _isDoAnimation = false;
 
@@ -44,15 +44,12 @@ public class WaitAnimation:MonoBehaviour
 
     void Update()
     {
-        if (_isDoAnimation)
-        {
-            if (Time.time> _targetTime)
-            {
-                _targetTime = Time.time + _speed;
-                _imgIndex++;
-                if (_imgIndex >= SourceImage.Count) _imgIndex = 0;
-                _targetImage.texture = SourceImage[_imgIndex];
-            }
-        }
+        if (!_isDoAnimation) return;
+        if (!(Time.time > _targetTime)) return;
+        
+        _targetTime = Time.time + _speed;
+        _imgIndex++;
+        if (_imgIndex >= SourceImage.Count) _imgIndex = 0;
+        _targetImage.texture = SourceImage[_imgIndex];
     }
 }
