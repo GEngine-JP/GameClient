@@ -1,0 +1,9 @@
+message LRequest 
+{ 
+    required int32 nEmployeeID = 1;
+	 
+    required string strSerialNumber = 2;
+
+	required string strUrl = 3;
+	 
+}
