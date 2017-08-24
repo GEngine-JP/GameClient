@@ -1,0 +1,18 @@
+package hrv;
+
+option java_package = "com.sixfoot.hrv.codec.protobuf";
+option java_outer_classname = "UserInfoProto";
+
+message UserInfo {
+	required string username = 1;
+	optional int32 sex = 2;
+	optional string birthday = 3;
+	optional string mobile = 4;
+	optional int32 height = 5;
+	optional int32 weight = 6;
+	optional string workingPlace = 7;
+	optional string position = 8;
+	optional string medicalHistory = 9;
+	optional bool locked = 10;
+	optional string realName = 11;
+}

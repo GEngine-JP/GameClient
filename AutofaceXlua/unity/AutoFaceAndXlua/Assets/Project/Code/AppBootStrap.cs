@@ -12,6 +12,8 @@ using System;
 using UnityEngine;
 using Code.Core;
 using WorthGod;
+using LHPbSerializeUtil;
+
 public class AppBootStrap : MonoBehaviour
 {
     void Awake()
@@ -19,13 +21,27 @@ public class AppBootStrap : MonoBehaviour
         DontDestroyOnLoad(this);
         //1,启动游戏，注入依赖
         InjectionEnter.getInstance().Injection();
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
+        Application.targetFrameRate = AppConst.GameFrameRate;
+       
+    }
+
+    //资源更新
+    private void DownLoadResource()
+    {
+        
+    }
+
+    /// <summary>
+    /// 游戏启动
+    /// </summary>
+    private void GameStart()
+    {
         //todo 2.启动网络模块
         NetManager.getInstance();
 
         //todo 3.启动更新流程，加载lua体系
         GameManager.getInstance();
-
-
     }
 }
 

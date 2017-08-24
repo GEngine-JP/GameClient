@@ -44,6 +44,7 @@ namespace WorthGod
                     //todo 出全屏转圈特效
                 }
             });
+            Debug.LogWarning("尝试连接哟！！");
         }
 
 

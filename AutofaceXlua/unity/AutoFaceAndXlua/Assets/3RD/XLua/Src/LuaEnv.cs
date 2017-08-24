@@ -262,6 +262,8 @@ namespace XLua
 #endif
         }
 
+
+
         public object[] DoString(string chunk, string chunkName = "chunk", LuaTable env = null)
         {
             byte[] bytes = System.Text.Encoding.UTF8.GetBytes(chunk);
