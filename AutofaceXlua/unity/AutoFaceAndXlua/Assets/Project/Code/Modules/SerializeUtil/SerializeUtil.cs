@@ -20,10 +20,7 @@ namespace LHSerializeUtil
     [Injection(typeof(SerializeUtil), typeof(ISerializeUtil), true)]
     public class SerializeUtil : ISerializeUtil
     {
-        public T DepthCopyObject<T>(T objectdata) where T : class
-        {
-            return DataConvertUtility.ConvertToInstance(objectdata) as T;
-        }
+
 
         public T Deserialize<T>(byte[] arr) where T : class
         {

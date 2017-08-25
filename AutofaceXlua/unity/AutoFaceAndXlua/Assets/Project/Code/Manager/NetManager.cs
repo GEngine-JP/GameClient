@@ -11,16 +11,16 @@
 using System;
 using UnityEngine;
 using Code.Core;
-using LHNetwork;
 using DG.Tweening;
+using LHNetwork;
 
 namespace WorthGod
 {
     class NetManager:SingletonMono<NetManager>
     {
-        public IClient Client
+        public ISocketLink Client
         {
-            get { return InjectionEnter.getInstance().Get<IClient>(); }
+            get { return InjectionEnter.getInstance().Get<ISocketLink>(); }
         }
 
         void Awake()

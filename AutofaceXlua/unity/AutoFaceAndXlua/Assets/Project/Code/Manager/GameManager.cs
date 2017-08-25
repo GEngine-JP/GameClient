@@ -12,6 +12,7 @@ using UnityEngine;
 using System.Collections;
 using Code.Core;
 
+
 namespace WorthGod
 {
     public class GameManager : SingletonMono<GameManager>
