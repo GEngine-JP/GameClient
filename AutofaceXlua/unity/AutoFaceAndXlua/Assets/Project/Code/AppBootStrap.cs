@@ -23,7 +23,7 @@ public class AppBootStrap : MonoBehaviour
         InjectionEnter.getInstance().Injection();
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
         Application.targetFrameRate = AppConst.GameFrameRate;
-       
+        GameStart();
     }
 
     //资源更新
