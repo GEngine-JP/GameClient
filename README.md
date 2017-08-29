@@ -24,7 +24,7 @@
 
 ##
 
-##-2017.8.11
+## -2017.8.11
 版本更新接入android
 
 
@@ -32,9 +32,15 @@
 - 添加unity打包工具
 - 添加unity与android之间的通信测试工程 
 
-##-2017.8.14
+## -2017.8.14
 版本更新android理顺
 
+
+
+## 其他版本
+- [cocos版](http://git.oschina.net/beimigame/beimi)
+- [egret版])(http://git.oschina.net/beimigame/beimi)
+- [layerbox版](http://git.oschina.net/beimigame/beimi)
 
 ![输入图片说明](screenshot/大厅.png "屏幕截图.png")
 ![输入图片说明](screenshot/大厅2.png "屏幕截图.png")
