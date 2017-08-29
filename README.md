@@ -37,7 +37,8 @@
 
 
 
-## 其他版本
+## 版本合集
+- [unity3d版](https://github.com/ChessGame/GameClient)
 - [cocos版](http://git.oschina.net/beimigame/beimi)
 - [egret版](http://git.oschina.net/beimigame/beimi)
 - [layerbox版](http://git.oschina.net/beimigame/beimi)
