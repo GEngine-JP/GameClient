@@ -1,11 +1,11 @@
 
-[![Build Status](https://travis-ci.org/ChessGame/GameClient.svg?branch=master)](https://travis-ci.org/ChessGame/GameClient)
-[![GitHub issues](https://img.shields.io/github/issues/ChessGame/GameClient.svg)](https://github.com/ChessGame/GameClient/issues)
-[![GitHub forks](https://img.shields.io/github/forks/ChessGame/GameClient.svg)](https://github.com/ChessGame/GameClient/network)
-[![GitHub stars](https://img.shields.io/github/stars/ChessGame/GameClient.svg)](https://github.com/ChessGame/GameClient/stargazers)
-[![GitHub license](https://img.shields.io/badge/license-Apache%202-blue.svg)](https://raw.githubusercontent.com/ChessGame/GameClient/master/LICENSE)
-[![GitHub followers](https://img.shields.io/github/followers/xiaomoinfo.svg?style=social&label=Follow)]()
-[![GitHub watchers](https://img.shields.io/github/watchers/ChessGame/GameClient.svg?style=social&label=Watch)]()  
+[![Build Status](https://travis-ci.org/ChessGame/GameClient.svg?branch=master)](https://travis-ci.org/GameUnion/GameClient)
+[![GitHub issues](https://img.shields.io/github/issues/ChessGame/GameClient.svg)](https://github.com/GameUnion/GameClient/issues)
+[![GitHub forks](https://img.shields.io/github/forks/ChessGame/GameClient.svg)](https://github.com/GameUnion/GameClient/network)
+[![GitHub stars](https://img.shields.io/github/stars/ChessGame/GameClient.svg)](https://github.com/GameUnion/GameClient/stargazers)
+[![GitHub license](https://img.shields.io/badge/license-Apache%202-blue.svg)](https://raw.githubusercontent.com/GameUnion/GameClient/master/LICENSE)
+[![GitHub followers](https://img.shields.io/github/followers/houko.svg?style=social&label=Follow)]()
+[![GitHub watchers](https://img.shields.io/github/watchers/GameUnion/GameClient.svg?style=social&label=Watch)]()  
 
 ![输入图片说明](screenshot/大厅.png "屏幕截图.png")
 ![输入图片说明](screenshot/大厅2.png "屏幕截图.png")
