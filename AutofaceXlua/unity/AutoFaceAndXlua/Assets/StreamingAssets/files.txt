@@ -1,4 +1,0 @@
-StreamingAssets|412bfcbc0e187b3ab13fee8eb6f5d979
-StreamingAssets.manifest|41196f364ff56f65c8815de1de90af1b
-build/prefab/waitanimation.unity3d|8518d41d68dc2602f6d08f6d4ec5a64b
-build/prefab/waitanimation.unity3d.manifest|ff8b832e0b96b3eab6940b4275c66019

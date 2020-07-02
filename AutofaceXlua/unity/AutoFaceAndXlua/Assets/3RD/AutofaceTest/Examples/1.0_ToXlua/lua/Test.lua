@@ -1,1 +1,0 @@
-function DoSomething()	print("you jump i jump...")end
